@@ -30,54 +30,98 @@
         {
             this.components = new System.ComponentModel.Container();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quicker_QueueDataSet = new mock_up.Quicker_QueueDataSet();
+            this.businessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.businessTableAdapter = new mock_up.Quicker_QueueDataSetTableAdapters.BusinessTableAdapter();
+            this.tableAdapterManager = new mock_up.Quicker_QueueDataSetTableAdapters.TableAdapterManager();
+            this.businessDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.businessDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // quicker_QueueDataSet
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.dataGridView1.DataSource = this.bindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(291, 120);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.Size = new System.Drawing.Size(1072, 623);
-            this.dataGridView1.TabIndex = 0;
+            this.quicker_QueueDataSet.DataSetName = "Quicker_QueueDataSet";
+            this.quicker_QueueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Column3
+            // businessBindingSource
             // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
+            this.businessBindingSource.DataMember = "Business";
+            this.businessBindingSource.DataSource = this.quicker_QueueDataSet;
             // 
-            // Column2
+            // businessTableAdapter
             // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
+            this.businessTableAdapter.ClearBeforeFill = true;
             // 
-            // Column1
+            // tableAdapterManager
             // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BusinessTableAdapter = this.businessTableAdapter;
+            this.tableAdapterManager.CustomerTableAdapter = null;
+            this.tableAdapterManager.OrdersTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = mock_up.Quicker_QueueDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // businessDataGridView
+            // 
+            this.businessDataGridView.AutoGenerateColumns = false;
+            this.businessDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.businessDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.businessDataGridView.DataSource = this.businessBindingSource;
+            this.businessDataGridView.Location = new System.Drawing.Point(12, 35);
+            this.businessDataGridView.Name = "businessDataGridView";
+            this.businessDataGridView.RowTemplate.Height = 24;
+            this.businessDataGridView.Size = new System.Drawing.Size(444, 336);
+            this.businessDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "BusName";
+            this.dataGridViewTextBoxColumn7.HeaderText = "BusName";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "openHour";
+            this.dataGridViewTextBoxColumn4.HeaderText = "openHour";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "closeHour";
+            this.dataGridViewTextBoxColumn5.HeaderText = "closeHour";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "BusType";
+            this.dataGridViewTextBoxColumn6.HeaderText = "BusType";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // Database
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1593, 875);
-            this.Controls.Add(this.dataGridView1);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(796, 452);
+            this.Controls.Add(this.businessDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Database";
             this.Text = "Database";
+            this.Load += new System.EventHandler(this.Database_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.businessDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,9 +129,14 @@
         #endregion
 
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private Quicker_QueueDataSet quicker_QueueDataSet;
+        private System.Windows.Forms.BindingSource businessBindingSource;
+        private Quicker_QueueDataSetTableAdapters.BusinessTableAdapter businessTableAdapter;
+        private Quicker_QueueDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView businessDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

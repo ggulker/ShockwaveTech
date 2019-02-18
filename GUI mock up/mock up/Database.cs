@@ -16,5 +16,12 @@ namespace mock_up
         {
             InitializeComponent();
         }
+
+        private void Database_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'quicker_QueueDataSet.Business' table. You can move, or remove it, as needed.
+            this.businessTableAdapter.Fill(this.quicker_QueueDataSet.Business);
+
+        }
     }
 }

@@ -16,10 +16,5 @@ namespace mock_up
         {
             InitializeComponent();
         }
-
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

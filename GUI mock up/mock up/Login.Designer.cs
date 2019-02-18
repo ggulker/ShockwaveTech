@@ -28,44 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.newBut = new System.Windows.Forms.Button();
+            this.loginBut = new System.Windows.Forms.Button();
+            this.title = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
+            // newBut
             // 
-            this.button2.Location = new System.Drawing.Point(452, 488);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(689, 166);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "New";
-            this.button2.UseVisualStyleBackColor = true;
+            this.newBut.Location = new System.Drawing.Point(225, 246);
+            this.newBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newBut.Name = "newBut";
+            this.newBut.Size = new System.Drawing.Size(344, 70);
+            this.newBut.TabIndex = 3;
+            this.newBut.Text = "New";
+            this.newBut.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // loginBut
             // 
-            this.button1.Location = new System.Drawing.Point(452, 221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(689, 166);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
+            this.loginBut.Location = new System.Drawing.Point(225, 140);
+            this.loginBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginBut.Name = "loginBut";
+            this.loginBut.Size = new System.Drawing.Size(344, 72);
+            this.loginBut.TabIndex = 2;
+            this.loginBut.Text = "Login";
+            this.loginBut.UseVisualStyleBackColor = true;
+            // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Sitka Text", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Location = new System.Drawing.Point(150, 10);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(461, 87);
+            this.title.TabIndex = 8;
+            this.title.Text = "Quicker Queue";
+            this.title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1593, 875);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(796, 452);
+            this.Controls.Add(this.title);
+            this.Controls.Add(this.newBut);
+            this.Controls.Add(this.loginBut);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button newBut;
+        private System.Windows.Forms.Button loginBut;
+        private System.Windows.Forms.Label title;
     }
 }
