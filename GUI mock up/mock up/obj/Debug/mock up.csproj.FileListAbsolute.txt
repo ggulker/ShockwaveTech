@@ -1,0 +1,13 @@
+C:\Users\Holden\source\repos\mock up\mock up\bin\Debug\mock up.exe.config
+C:\Users\Holden\source\repos\mock up\mock up\bin\Debug\mock up.exe
+C:\Users\Holden\source\repos\mock up\mock up\bin\Debug\mock up.pdb
+C:\Users\Holden\source\repos\mock up\mock up\obj\Debug\mock up.csprojResolveAssemblyReference.cache
+C:\Users\Holden\source\repos\mock up\mock up\obj\Debug\mock_up.Form1.resources
+C:\Users\Holden\source\repos\mock up\mock up\obj\Debug\mock_up.Properties.Resources.resources
+C:\Users\Holden\source\repos\mock up\mock up\obj\Debug\mock up.csproj.GenerateResource.Cache
+C:\Users\Holden\source\repos\mock up\mock up\obj\Debug\mock up.csproj.CoreCompileInputs.cache
+C:\Users\Holden\source\repos\mock up\mock up\obj\Debug\mock up.exe
+C:\Users\Holden\source\repos\mock up\mock up\obj\Debug\mock up.pdb
+C:\Users\Holden\source\repos\mock up\mock up\obj\Debug\mock_up.Database.resources
+C:\Users\Holden\source\repos\mock up\mock up\obj\Debug\mock_up.Form2.resources
+C:\Users\Holden\source\repos\mock up\mock up\obj\Debug\mock_up.Login.resources
