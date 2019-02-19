@@ -1,6 +1,6 @@
 ﻿namespace mock_up
 {
-    partial class Login
+    partial class Start
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             // newBut
             // 
             this.newBut.Location = new System.Drawing.Point(225, 246);
-            this.newBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newBut.Margin = new System.Windows.Forms.Padding(2);
             this.newBut.Name = "newBut";
             this.newBut.Size = new System.Drawing.Size(344, 70);
             this.newBut.TabIndex = 3;
@@ -46,12 +46,13 @@
             // loginBut
             // 
             this.loginBut.Location = new System.Drawing.Point(225, 140);
-            this.loginBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginBut.Margin = new System.Windows.Forms.Padding(2);
             this.loginBut.Name = "loginBut";
             this.loginBut.Size = new System.Drawing.Size(344, 72);
             this.loginBut.TabIndex = 2;
             this.loginBut.Text = "Login";
             this.loginBut.UseVisualStyleBackColor = true;
+            this.loginBut.Click += new System.EventHandler(this.loginBut_Click);
             // 
             // title
             // 
@@ -64,7 +65,7 @@
             this.title.Text = "Quicker Queue";
             this.title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Login
+            // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,8 +74,8 @@
             this.Controls.Add(this.title);
             this.Controls.Add(this.newBut);
             this.Controls.Add(this.loginBut);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Login";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Start";
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

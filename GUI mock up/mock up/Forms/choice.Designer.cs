@@ -1,6 +1,6 @@
 ﻿namespace mock_up
 {
-    partial class Form1
+    partial class choice
     {
         /// <summary>
         /// Required designer variable.
@@ -28,30 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.busBut = new System.Windows.Forms.Button();
+            this.userBut = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // busBut
             // 
-            this.button1.Location = new System.Drawing.Point(226, 130);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(344, 86);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Business";
-            this.button1.UseVisualStyleBackColor = true;
+            this.busBut.Location = new System.Drawing.Point(226, 130);
+            this.busBut.Margin = new System.Windows.Forms.Padding(2);
+            this.busBut.Name = "busBut";
+            this.busBut.Size = new System.Drawing.Size(344, 86);
+            this.busBut.TabIndex = 0;
+            this.busBut.Text = "Business";
+            this.busBut.UseVisualStyleBackColor = true;
+            this.busBut.Click += new System.EventHandler(this.busBut_Click);
             // 
-            // button2
+            // userBut
             // 
-            this.button2.Location = new System.Drawing.Point(226, 242);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(344, 86);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "User";
-            this.button2.UseVisualStyleBackColor = true;
+            this.userBut.Location = new System.Drawing.Point(226, 242);
+            this.userBut.Margin = new System.Windows.Forms.Padding(2);
+            this.userBut.Name = "userBut";
+            this.userBut.Size = new System.Drawing.Size(344, 86);
+            this.userBut.TabIndex = 1;
+            this.userBut.Text = "User";
+            this.userBut.UseVisualStyleBackColor = true;
+            this.userBut.Click += new System.EventHandler(this.userBut_Click);
             // 
             // label2
             // 
@@ -64,17 +66,17 @@
             this.label2.Text = "Quicker Queue";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Form1
+            // choice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(796, 452);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1";
+            this.Controls.Add(this.userBut);
+            this.Controls.Add(this.busBut);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "choice";
             this.Text = "ShockWave Inc.";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -83,8 +85,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button busBut;
+        private System.Windows.Forms.Button userBut;
         private System.Windows.Forms.Label label2;
     }
 }

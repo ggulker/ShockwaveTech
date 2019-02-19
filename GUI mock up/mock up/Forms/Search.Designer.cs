@@ -1,6 +1,6 @@
 ﻿namespace mock_up
 {
-    partial class Database
+    partial class Search
     {
         /// <summary>
         /// Required designer variable.

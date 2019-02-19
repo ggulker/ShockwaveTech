@@ -1,6 +1,6 @@
 ﻿namespace mock_up
 {
-    partial class Form2
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -83,6 +83,7 @@
             this.loginBut.TabIndex = 5;
             this.loginBut.Text = "Login";
             this.loginBut.UseVisualStyleBackColor = true;
+            this.loginBut.Click += new System.EventHandler(this.loginBut_Click);
             // 
             // cancelBut
             // 

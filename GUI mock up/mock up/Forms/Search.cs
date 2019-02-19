@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace mock_up
 {
-    public partial class Database : Form
+    public partial class Search : Form
     {
-        public Database()
+        public Search()
         {
             InitializeComponent();
         }
