@@ -23,21 +23,42 @@ namespace mock_up
 
         private void loginBut_Click(object sender, EventArgs e)
         {
-            string user, pass;
-            user = usernameText.Text;
-            pass = passText.Text;
-            if (type == 'B')
-            {
-                //string dataPass = " ";
-                //string sql = "SELECT pass FROM Business WHERE username LIKE @username";
-                //using (SqlConnection conn = new SqlConnection(connString))
-                //{
+            bool pass = loginCheck();
+            if (pass)
+                MessageBox.Show("good");
+            else
+                MessageBox.Show("bad");
+        }
 
-                //}
+        private bool loginCheck()
+        {
+            string user = usernameText.Text;
+            if(type == 'B')
+            {
+                string dataPass = string.Empty;
+
+                SqlConnection con = new SqlConnection("Data Source=shockwave.database.windows.net;Initial Catalog=Quicker Queue;;User ID=user;Password=Mwsu1234");
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "SELECT pass FROM Business WHERE username=@username";
+                cmd.Parameters.AddWithValue("@username", user);
+                con.Open();
+                var r = cmd.ExecuteReader();
+                if (r.Read())
+                {
+                    string pass = passText.Text;
+                    string d = r["pass"].ToString();
+                    dataPass= d.Replace(" ", "");
+                    if (dataPass == pass)
+                        return true;
+                    else
+                        return false;
+                }
+                else
+                    return false;
             }
             else
             {
-
+                return false;
             }
         }
     }
