@@ -47,6 +47,18 @@
   <ItemGroup>
     <Compile Include="Classes\Business.cs" />
     <Compile Include="Classes\Customer.cs" />
+    <Compile Include="Forms\BusHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BusHome.Designer.cs">
+      <DependentUpon>BusHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finalize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finalize.Designer.cs">
+      <DependentUpon>Finalize.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +91,12 @@
       <DependentUpon>Quicker_QueueDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Classes\User.cs" />
+    <EmbeddedResource Include="Forms\BusHome.resx">
+      <DependentUpon>BusHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finalize.resx">
+      <DependentUpon>Finalize.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Search.resx">
       <DependentUpon>Search.cs</DependentUpon>
     </EmbeddedResource>
