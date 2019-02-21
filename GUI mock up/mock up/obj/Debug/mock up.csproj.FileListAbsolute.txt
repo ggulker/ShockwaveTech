@@ -24,3 +24,5 @@ C:\Users\ceage\Downloads\ShockwaveTech-master\ShockwaveTech\GUI mock up\mock up\
 C:\Users\ceage\Downloads\ShockwaveTech-master\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.csproj.CoreCompileInputs.cache
 C:\Users\ceage\Downloads\ShockwaveTech-master\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.exe
 C:\Users\ceage\Downloads\ShockwaveTech-master\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.pdb
+C:\Users\ceage\Downloads\ShockwaveTech-master\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Forms.BusHome.resources
+C:\Users\ceage\Downloads\ShockwaveTech-master\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Forms.Finalize.resources

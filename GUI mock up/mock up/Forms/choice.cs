@@ -17,6 +17,7 @@ namespace mock_up
             InitializeComponent();
         }
 
+        //creates a new window and sends what button they pressed
         private void busBut_Click(object sender, EventArgs e)
         {
             Login login = new Login('B');

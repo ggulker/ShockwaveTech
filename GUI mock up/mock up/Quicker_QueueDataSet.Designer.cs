@@ -2817,11 +2817,16 @@ SELECT OrderID, Customer, Business FROM Orders WHERE (OrderID = @OrderID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT OrderID, Customer, Business FROM dbo.Orders";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT OrderID, Customer, Business FROM dbo.Orders WHERE business=@business";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@business", global::System.Data.SqlDbType.Char, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Business", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2843,6 +2848,42 @@ SELECT OrderID, Customer, Business FROM Orders WHERE (OrderID = @OrderID)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual Quicker_QueueDataSet.OrdersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            Quicker_QueueDataSet.OrdersDataTable dataTable = new Quicker_QueueDataSet.OrdersDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrdersGet(Quicker_QueueDataSet.OrdersDataTable dataTable, string business) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((business == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(business));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Quicker_QueueDataSet.OrdersDataTable GetDataBy(string business) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((business == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(business));
+            }
             Quicker_QueueDataSet.OrdersDataTable dataTable = new Quicker_QueueDataSet.OrdersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
