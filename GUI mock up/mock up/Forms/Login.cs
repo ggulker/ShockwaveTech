@@ -50,60 +50,34 @@ namespace mock_up
         {
             //holds the username passed in
             string user = usernameText.Text;
-            //creates a connection to our database
-            SqlConnection con = new SqlConnection("Data Source=shockwave.database.windows.net;Initial Catalog=Quicker Queue;;User ID=user;Password=Mwsu1234");
-            //creates a command that will hold our query
-            SqlCommand cmd = con.CreateCommand();
 
             if (type == 'B')
             {
-                //holds passed in password from database
-                string dataPass = string.Empty;
-                //query we send in
-                cmd.CommandText = "SELECT pass FROM Business WHERE username=@username";
-                //replaces @username in our query with specified username
-                cmd.Parameters.AddWithValue("@username", user);
-                con.Open();
-                //get info 
-                var r = cmd.ExecuteReader();
-                //checks if the username had anything in the database
-                if (r.Read())
+                Business login = new Business(user);
+                if (login.passCheck(passText.Text))
                 {
-                    //compare the typed in password with our database
-                    string pass = passText.Text;
-                    string d = r["pass"].ToString();
-                    //password has weird empty spaces so this gets rid of those
-                    dataPass= d.Replace(" ", "");
-                    if (dataPass == pass)
-                        return true;
-                    else
-                        return false;
+                    return true;
                 }
                 else
                     return false;
             }
             else
             {
-                //all the same just for a customer not a business
-                string dataPass = string.Empty;
-
-                cmd.CommandText = "SELECT pass FROM Customer WHERE username=@username";
-                cmd.Parameters.AddWithValue("@username", user);
-                con.Open();
-                var r = cmd.ExecuteReader();
-                if (r.Read())
+                Customer login = new Customer(user);
+                if (login.passCheck(passText.Text))
                 {
-                    string pass = passText.Text;
-                    string d = r["pass"].ToString();
-                    dataPass = d.Replace(" ", "");
-                    if (dataPass == pass)
-                        return true;
-                    else
-                        return false;
+                    return true;
                 }
                 else
                     return false;
             }
+        }
+
+        private void cancelBut_Click(object sender, EventArgs e)
+        {
+            choice cancel = new choice();
+            cancel.Show();
+            this.Close();
         }
     }
 }
