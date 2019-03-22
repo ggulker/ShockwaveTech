@@ -93,6 +93,7 @@
             this.cancelBut.TabIndex = 6;
             this.cancelBut.Text = "Cancel";
             this.cancelBut.UseVisualStyleBackColor = true;
+            this.cancelBut.Click += new System.EventHandler(this.cancelBut_Click);
             // 
             // title
             // 
@@ -105,7 +106,7 @@
             this.title.Text = "Quicker Queue";
             this.title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Form2
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,7 +120,7 @@
             this.Controls.Add(this.passText);
             this.Controls.Add(this.usernameText);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form2";
+            this.Name = "Login";
             this.Text = "Login Prompt";
             this.ResumeLayout(false);
             this.PerformLayout();
