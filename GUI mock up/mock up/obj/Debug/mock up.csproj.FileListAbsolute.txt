@@ -41,3 +41,6 @@ C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.csp
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.csproj.CoreCompileInputs.cache
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.exe
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.pdb
+C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.NewChoice.resources
+C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.CustCreate.resources
+C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.BusCreate.resources

@@ -23,5 +23,12 @@ namespace mock_up
             choose.Show();
             this.Hide();
         }
+
+        private void newBut_Click(object sender, EventArgs e)
+        {
+            NewChoice choice = new NewChoice();
+            choice.Show();
+            this.Hide();
+        }
     }
 }
