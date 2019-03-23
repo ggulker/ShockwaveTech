@@ -54,7 +54,7 @@ namespace mock_up
             if (type == 'B')
             {
                 Business login = new Business(user);
-                if (login.passCheck(passText.Text))
+                if (login.PassCheck(passText.Text))
                 {
                     return true;
                 }
@@ -64,7 +64,7 @@ namespace mock_up
             else
             {
                 Customer login = new Customer(user);
-                if (login.passCheck(passText.Text))
+                if (login.PassCheck(passText.Text))
                 {
                     return true;
                 }

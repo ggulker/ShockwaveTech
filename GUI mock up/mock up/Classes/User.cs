@@ -10,9 +10,12 @@ namespace mock_up
     abstract class User
     {
         protected string username;
-        protected string pass;
+        protected string pass = null;
         protected string email;
         protected SqlDataReader userData;
+        //creates a connection to our database
+        protected SqlConnection con = new SqlConnection
+            ("Data Source=shockwave.database.windows.net;Initial Catalog=Quicker Queue;;User ID=user;Password=Mwsu1234");
         public User(string u)
         {
             //gets all info on passed in username
@@ -22,11 +25,10 @@ namespace mock_up
         //gets all our customer or business info from the server
         protected void Download(string user)
         {
-            //creates a connection to our database
-            SqlConnection con = new SqlConnection("Data Source=shockwave.database.windows.net;Initial Catalog=Quicker Queue;;User ID=user;Password=Mwsu1234");
+
             //creates a command that will hold our query
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = getQueary();
+            cmd.CommandText = GetQueary();
             //replaces @username in our query with specified username
             cmd.Parameters.AddWithValue("@username", user);
 
@@ -37,25 +39,32 @@ namespace mock_up
             if (r.Read())
             {
                 userData = r;
-                copyInfo();
+                CopyInfo();
             }
             con.Close();
         }
 
         //gets the queary were running 
-        virtual protected string getQueary()
+        virtual protected string GetQueary()
         {
             return "";
         }
 
         //copy all data from queary to class
-        virtual protected void copyInfo()
+        virtual protected void CopyInfo()
+        {
+
+        }
+
+        //used to create accounts for both user types
+        //done by creating a command INSERT and adding all user input info
+        virtual protected void Create()
         {
 
         }
 
         //password check
-        virtual public bool passCheck(string given)
+        virtual public bool PassCheck(string given)
         {
             if (given == pass)
                 return true;

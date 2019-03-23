@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,15 +19,34 @@ namespace mock_up
 
         }
 
+        public Business(string u, string p, string e, int o, int c, string t, string n) : base(u)
+        {
+            //sense we use the username to download info in our base constructor
+            //if there is any info that means the account already exists
+            if (pass != null)
+                throw new System.InvalidOperationException("An account already exists with this username");
+            else
+            {
+                pass = p;
+                username = u;
+                email = e;
+                closeHour = c;
+                openHour = o;
+                busType = t;
+                busName = n;
+                Create();
+            }
+        }
+
         //creates user specific queary for our search
-        protected override string getQueary()
+        protected override string GetQueary()
         {
             string s = "SELECT * FROM Business WHERE username=@username";
             return s;
         }
 
         //copies info specifically needed for this class
-        protected override void copyInfo()
+        protected override void CopyInfo()
         {
             //grabs the info from our data reader
             username = userData["username"].ToString();
@@ -42,6 +62,23 @@ namespace mock_up
             email = email.Replace(" ", "");
             busName = busName.Replace(" ", "");
             busType = busType.Replace(" ", "");
+        }
+
+        protected override void Create()
+        {
+            SqlCommand create = con.CreateCommand();
+            create.CommandText = "INSERT INTO Customer VALUES (";
+            string u = "'" + username + "', ";
+            string p = "'" + pass + "', ";
+            string e = "'" + email + "', ";
+            string o = openHour.ToString() + ", ";
+            string c = closeHour.ToString() + ", ";
+            string t = "'" + busType + "', ";
+            string n = "'" + busName + "')";
+            create.CommandText += u + p + e + o + c + t + n;
+            con.Open();
+            create.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

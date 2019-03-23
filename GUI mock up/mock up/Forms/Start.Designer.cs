@@ -42,6 +42,7 @@
             this.newBut.TabIndex = 3;
             this.newBut.Text = "New";
             this.newBut.UseVisualStyleBackColor = true;
+            this.newBut.Click += new System.EventHandler(this.newBut_Click);
             // 
             // loginBut
             // 
