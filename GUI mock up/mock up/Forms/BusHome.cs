@@ -16,7 +16,6 @@ namespace mock_up
     {
         //need the business name to get orders
         string BusName;
-        private Timer refresh;
         public BusHome(string n)
         {
             BusName = n;

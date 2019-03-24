@@ -1,4 +1,4 @@
-﻿namespace mock_up.Forms
+﻿namespace mock_up
 {
     partial class BusHome
     {

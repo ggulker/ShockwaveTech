@@ -19,7 +19,7 @@ namespace mock_up
 
         }
 
-        public Business(string u, string p, string e, int o, int c, string t, string n) : base(u)
+        public Business(string u, string p, string e, string o, string c, string t, string n) : base(u)
         {
             //sense we use the username to download info in our base constructor
             //if there is any info that means the account already exists
@@ -30,8 +30,8 @@ namespace mock_up
                 pass = p;
                 username = u;
                 email = e;
-                closeHour = c;
-                openHour = o;
+                closeHour = Convert.ToInt32(c);
+                openHour = Convert.ToInt32(o);
                 busType = t;
                 busName = n;
                 Create();
@@ -67,7 +67,7 @@ namespace mock_up
         protected override void Create()
         {
             SqlCommand create = con.CreateCommand();
-            create.CommandText = "INSERT INTO Customer VALUES (";
+            create.CommandText = "INSERT INTO Business VALUES (";
             string u = "'" + username + "', ";
             string p = "'" + pass + "', ";
             string e = "'" + email + "', ";

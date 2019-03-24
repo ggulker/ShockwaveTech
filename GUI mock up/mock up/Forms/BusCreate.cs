@@ -26,11 +26,15 @@ namespace mock_up
                 string username = UserIDtextBox.Text;
                 string pass = PasswordtextBox.Text;
                 string email = EmailtextBox.Text;
+                string open = OpentextBox.Text;
+                string close = ClosetextBox.Text;
+                string type = typeComboBox.Text;
+                string name = NametextBox.Text;
                 try
                 {
-                    //Business create = new Business(username,pass,email,open,close,type,name);
+                    Business create = new Business(username,pass,email,open,close,type,name);
                     MessageBox.Show("Your account has been created!");
-                    Search start = new Search(username);
+                    BusHome start = new BusHome(username);
                     start.Show();
                     this.Close();
                 }
