@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
+using Timer = System.Windows.Forms.Timer;
 
-namespace mock_up.Forms
+namespace mock_up
 {
     public partial class BusHome : Form
     {
         //need the business name to get orders
         string BusName;
+        private Timer refresh;
         public BusHome(string n)
         {
             BusName = n;
@@ -32,7 +35,7 @@ namespace mock_up.Forms
         {
             // fills table with orders from the business that logged in
             this.ordersTableAdapter.OrdersGet(this.quicker_QueueDataSet.Orders,BusName);
-
+            SetTimer(sender,e);
         }
 
         //just restarts program
@@ -41,6 +44,19 @@ namespace mock_up.Forms
             Start restart = new Start();
             restart.Show();
             this.Close();
+        }
+
+        private void SetTimer(object sender, EventArgs e)
+        {
+            Timer timer = new Timer();
+            timer.Interval = (10 * 1000); // 10 secs
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            this.ordersTableAdapter.OrdersGet(this.quicker_QueueDataSet.Orders, BusName);
         }
     }
 }
