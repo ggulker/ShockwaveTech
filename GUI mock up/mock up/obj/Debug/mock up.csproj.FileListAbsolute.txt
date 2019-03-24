@@ -30,7 +30,6 @@ C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\bin\Debug\mock up.exe
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\bin\Debug\mock up.exe
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\bin\Debug\mock up.pdb
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.csprojAssemblyReference.cache
-C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Forms.BusHome.resources
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Forms.Finalize.resources
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Search.resources
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Login.resources
@@ -44,3 +43,5 @@ C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.pdb
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.NewChoice.resources
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.CustCreate.resources
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.BusCreate.resources
+C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.BusHome.resources
+C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\WindowsFormsApp2.BusinessForm.resources

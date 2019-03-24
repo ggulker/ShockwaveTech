@@ -26,6 +26,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.ClosecomboBox = new System.Windows.Forms.ComboBox();
+            this.Closelabel = new System.Windows.Forms.Label();
+            this.ClosetextBox = new System.Windows.Forms.TextBox();
+            this.OpencomboBox = new System.Windows.Forms.ComboBox();
+            this.Openlabel = new System.Windows.Forms.Label();
+            this.OpentextBox = new System.Windows.Forms.TextBox();
+            this.Namelabel = new System.Windows.Forms.Label();
+            this.NametextBox = new System.Windows.Forms.TextBox();
+            this.typeLabel = new System.Windows.Forms.Label();
+            this.typeComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +53,7 @@
             // 
             this.EmailtextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.EmailtextBox.Location = new System.Drawing.Point(229, 201);
-            this.EmailtextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmailtextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(219, 22);
             this.EmailtextBox.TabIndex = 2;
@@ -62,7 +72,7 @@
             // 
             this.PasswordtextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PasswordtextBox.Location = new System.Drawing.Point(229, 233);
-            this.PasswordtextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PasswordtextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PasswordtextBox.Name = "PasswordtextBox";
             this.PasswordtextBox.Size = new System.Drawing.Size(219, 22);
             this.PasswordtextBox.TabIndex = 4;
@@ -81,7 +91,7 @@
             // 
             this.UserIDtextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.UserIDtextBox.Location = new System.Drawing.Point(229, 169);
-            this.UserIDtextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserIDtextBox.Margin = new System.Windows.Forms.Padding(4);
             this.UserIDtextBox.Name = "UserIDtextBox";
             this.UserIDtextBox.Size = new System.Drawing.Size(219, 22);
             this.UserIDtextBox.TabIndex = 6;
@@ -89,8 +99,8 @@
             // Registerbutton
             // 
             this.Registerbutton.BackColor = System.Drawing.Color.SpringGreen;
-            this.Registerbutton.Location = new System.Drawing.Point(349, 265);
-            this.Registerbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Registerbutton.Location = new System.Drawing.Point(349, 365);
+            this.Registerbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Registerbutton.Name = "Registerbutton";
             this.Registerbutton.Size = new System.Drawing.Size(100, 28);
             this.Registerbutton.TabIndex = 8;
@@ -101,8 +111,8 @@
             // Cancelbutton
             // 
             this.Cancelbutton.BackColor = System.Drawing.Color.DimGray;
-            this.Cancelbutton.Location = new System.Drawing.Point(229, 265);
-            this.Cancelbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Cancelbutton.Location = new System.Drawing.Point(229, 365);
+            this.Cancelbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelbutton.Name = "Cancelbutton";
             this.Cancelbutton.Size = new System.Drawing.Size(100, 28);
             this.Cancelbutton.TabIndex = 9;
@@ -115,7 +125,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(660, 74);
             this.panel1.TabIndex = 10;
@@ -124,7 +134,7 @@
             // 
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(16, 15);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(96, 46);
             this.panel2.TabIndex = 0;
@@ -141,12 +151,124 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Create Account";
             // 
-            // Create
+            // ClosecomboBox
+            // 
+            this.ClosecomboBox.BackColor = System.Drawing.SystemColors.Control;
+            this.ClosecomboBox.FormattingEnabled = true;
+            this.ClosecomboBox.Location = new System.Drawing.Point(301, 294);
+            this.ClosecomboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ClosecomboBox.Name = "ClosecomboBox";
+            this.ClosecomboBox.Size = new System.Drawing.Size(52, 24);
+            this.ClosecomboBox.TabIndex = 22;
+            this.ClosecomboBox.Text = "pm";
+            // 
+            // Closelabel
+            // 
+            this.Closelabel.AutoSize = true;
+            this.Closelabel.Location = new System.Drawing.Point(173, 299);
+            this.Closelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Closelabel.Name = "Closelabel";
+            this.Closelabel.Size = new System.Drawing.Size(47, 17);
+            this.Closelabel.TabIndex = 21;
+            this.Closelabel.Text = "Close:";
+            // 
+            // ClosetextBox
+            // 
+            this.ClosetextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClosetextBox.Location = new System.Drawing.Point(229, 295);
+            this.ClosetextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ClosetextBox.Name = "ClosetextBox";
+            this.ClosetextBox.Size = new System.Drawing.Size(63, 22);
+            this.ClosetextBox.TabIndex = 20;
+            // 
+            // OpencomboBox
+            // 
+            this.OpencomboBox.BackColor = System.Drawing.SystemColors.Control;
+            this.OpencomboBox.FormattingEnabled = true;
+            this.OpencomboBox.Location = new System.Drawing.Point(301, 262);
+            this.OpencomboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.OpencomboBox.Name = "OpencomboBox";
+            this.OpencomboBox.Size = new System.Drawing.Size(52, 24);
+            this.OpencomboBox.TabIndex = 19;
+            this.OpencomboBox.Text = "am";
+            // 
+            // Openlabel
+            // 
+            this.Openlabel.AutoSize = true;
+            this.Openlabel.Location = new System.Drawing.Point(173, 267);
+            this.Openlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Openlabel.Name = "Openlabel";
+            this.Openlabel.Size = new System.Drawing.Size(47, 17);
+            this.Openlabel.TabIndex = 18;
+            this.Openlabel.Text = "Open:";
+            // 
+            // OpentextBox
+            // 
+            this.OpentextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.OpentextBox.Location = new System.Drawing.Point(229, 263);
+            this.OpentextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.OpentextBox.Name = "OpentextBox";
+            this.OpentextBox.Size = new System.Drawing.Size(63, 22);
+            this.OpentextBox.TabIndex = 17;
+            // 
+            // Namelabel
+            // 
+            this.Namelabel.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
+            this.Namelabel.AutoSize = true;
+            this.Namelabel.Location = new System.Drawing.Point(110, 330);
+            this.Namelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Namelabel.Name = "Namelabel";
+            this.Namelabel.Size = new System.Drawing.Size(110, 17);
+            this.Namelabel.TabIndex = 24;
+            this.Namelabel.Text = "Business Name:";
+            // 
+            // NametextBox
+            // 
+            this.NametextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.NametextBox.Location = new System.Drawing.Point(229, 326);
+            this.NametextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.NametextBox.Name = "NametextBox";
+            this.NametextBox.Size = new System.Drawing.Size(219, 22);
+            this.NametextBox.TabIndex = 23;
+            // 
+            // typeLabel
+            // 
+            this.typeLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
+            this.typeLabel.AutoSize = true;
+            this.typeLabel.Location = new System.Drawing.Point(114, 141);
+            this.typeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Size = new System.Drawing.Size(105, 17);
+            this.typeLabel.TabIndex = 27;
+            this.typeLabel.Text = "Business Type:";
+            // 
+            // typeComboBox
+            // 
+            this.typeComboBox.FormattingEnabled = true;
+            this.typeComboBox.Items.AddRange(new object[] {
+            " ",
+            "Restraunt"});
+            this.typeComboBox.Location = new System.Drawing.Point(229, 138);
+            this.typeComboBox.Name = "typeComboBox";
+            this.typeComboBox.Size = new System.Drawing.Size(220, 24);
+            this.typeComboBox.TabIndex = 26;
+            // 
+            // BusCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(660, 454);
+            this.Controls.Add(this.typeLabel);
+            this.Controls.Add(this.typeComboBox);
+            this.Controls.Add(this.Namelabel);
+            this.Controls.Add(this.NametextBox);
+            this.Controls.Add(this.ClosecomboBox);
+            this.Controls.Add(this.Closelabel);
+            this.Controls.Add(this.ClosetextBox);
+            this.Controls.Add(this.OpencomboBox);
+            this.Controls.Add(this.Openlabel);
+            this.Controls.Add(this.OpentextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Cancelbutton);
@@ -157,8 +279,8 @@
             this.Controls.Add(this.PasswordtextBox);
             this.Controls.Add(this.Emaillabel);
             this.Controls.Add(this.EmailtextBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Create";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "BusCreate";
             this.Text = "Register";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -178,5 +300,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox ClosecomboBox;
+        private System.Windows.Forms.Label Closelabel;
+        private System.Windows.Forms.TextBox ClosetextBox;
+        private System.Windows.Forms.ComboBox OpencomboBox;
+        private System.Windows.Forms.Label Openlabel;
+        private System.Windows.Forms.TextBox OpentextBox;
+        private System.Windows.Forms.Label Namelabel;
+        private System.Windows.Forms.TextBox NametextBox;
+        private System.Windows.Forms.Label typeLabel;
+        private System.Windows.Forms.ComboBox typeComboBox;
     }
 }
