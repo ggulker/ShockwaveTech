@@ -45,3 +45,21 @@ C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Cus
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.BusCreate.resources
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.BusHome.resources
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\WindowsFormsApp2.BusinessForm.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.csprojResolveAssemblyReference.cache
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.exe
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.pdb
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\bin\Debug\mock up.exe.config
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\bin\Debug\mock up.exe
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\bin\Debug\mock up.pdb
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.BusHome.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.BusCreate.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.NewChoice.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.CustCreate.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Forms.Finalize.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Search.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Login.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Start.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.choice.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Properties.Resources.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.csproj.GenerateResource.Cache
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.csproj.CoreCompileInputs.cache

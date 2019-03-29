@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Aes_Encryption.cs" />
     <Compile Include="Classes\Business.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Forms\BusHome.cs">
@@ -58,12 +59,6 @@
     </Compile>
     <Compile Include="Forms\BusCreate.Designer.cs">
       <DependentUpon>BusCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\BusinessForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\BusinessForm.Designer.cs">
-      <DependentUpon>BusinessForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NewChoice.cs">
       <SubType>Form</SubType>
@@ -120,9 +115,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BusCreate.resx">
       <DependentUpon>BusCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BusinessForm.resx">
-      <DependentUpon>BusinessForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewChoice.resx">
       <DependentUpon>NewChoice.cs</DependentUpon>
