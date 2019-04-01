@@ -15,7 +15,7 @@ namespace mock_up
     public partial class Search : Form
     {
         string username;
-        private SqlConnection con = new SqlConnection("Data Source=shockwave.database.windows.net;Initial Catalog=Quicker Queue;;User ID=user;Password=Mwsu1234");
+        private SqlConnection con = new SqlConnection("Data Source=quickerproject.database.windows.net;Initial Catalog=Userbase;Persist Security Info=True;User ID=user;Password=Mwsu1234");
         SqlDataAdapter adapt;
         DataTable dt;
 
@@ -28,8 +28,8 @@ namespace mock_up
 
         private void Search_Load(object sender, EventArgs e)
         {
-            //fills with all businesses on load
-            this.businessTableAdapter.Fill(this.quicker_QueueDataSet.Business);
+            // TODO: This line of code loads data into the 'userbaseDataSet.Business' table. You can move, or remove it, as needed.
+            this.businessTableAdapter1.Fill(this.userbaseDataSet.Business);
         }
 
         //just restarts program
