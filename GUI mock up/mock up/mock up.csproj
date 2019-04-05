@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Aes_Encryption.cs" />
     <Compile Include="Classes\Business.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Forms\BusHome.cs">

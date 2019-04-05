@@ -9,6 +9,7 @@ namespace mock_up
 {
     class Business : User
     {
+        Aes_Encryption aes = new Aes_Encryption();
         public int openHour;
         public int closeHour;
         public string busType;
@@ -27,6 +28,17 @@ namespace mock_up
                 throw new System.InvalidOperationException("An account already exists with this username");
             else
             {
+                string OldPassword = p;
+                p = aes.Encrypt(p, OldPassword);
+                u = aes.Encrypt(u, OldPassword);
+                e = aes.Encrypt(e, OldPassword);
+                //MessageBox.Show(aes.Encrypt(p,p));
+                //MessageBox.Show(aes.Encrypt(u,p));
+                //MessageBox.Show(aes.Encrypt(e,p));
+
+                //MessageBox.Show(aes.Decrypt(p));
+                //MessageBox.Show(aes.Decrypt(u));
+                //MessageBox.Show(aes.Decrypt(e));s
                 pass = p;
                 username = u;
                 email = e;
