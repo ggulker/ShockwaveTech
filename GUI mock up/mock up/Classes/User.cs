@@ -15,7 +15,7 @@ namespace mock_up
         protected SqlDataReader userData;
         //creates a connection to our database
         protected SqlConnection con = new SqlConnection
-            ("Data Source=shockwave.database.windows.net;Initial Catalog=Quicker Queue;;User ID=user;Password=Mwsu1234");
+            ("Data Source=quickerproject.database.windows.net;Initial Catalog=Userbase;Persist Security Info=True;User ID=user;Password=Mwsu1234");
         public User(string u)
         {
             //gets all info on passed in username

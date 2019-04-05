@@ -26,14 +26,14 @@ namespace mock_up
         {
             this.Validate();
             this.ordersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.quicker_QueueDataSet);
+            this.tableAdapterManager1.UpdateAll(this.userbaseDataSet);
 
         }
 
         private void BusHome_Load(object sender, EventArgs e)
         {
-            // fills table with orders from the business that logged in
-            this.ordersTableAdapter.OrdersGet(this.quicker_QueueDataSet.Orders,BusName);
+            // TODO: This line of code loads data into the 'userbaseDataSet.Orders' table. You can move, or remove it, as needed.
+            this.ordersTableAdapter1.FillBy(this.userbaseDataSet.Orders, BusName);
             SetTimer(sender,e);
         }
 
@@ -55,7 +55,7 @@ namespace mock_up
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            this.ordersTableAdapter.OrdersGet(this.quicker_QueueDataSet.Orders, BusName);
+            this.ordersTableAdapter1.FillBy(this.userbaseDataSet.Orders, BusName);
         }
     }
 }

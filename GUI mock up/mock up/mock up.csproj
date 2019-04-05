@@ -110,6 +110,11 @@
       <DependentUpon>Quicker_QueueDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Classes\User.cs" />
+    <Compile Include="UserbaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserbaseDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\BusHome.resx">
       <DependentUpon>BusHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +170,17 @@
     </None>
     <None Include="Quicker_QueueDataSet.xss">
       <DependentUpon>Quicker_QueueDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UserbaseDataSet.xsc">
+      <DependentUpon>UserbaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UserbaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UserbaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UserbaseDataSet.xss">
+      <DependentUpon>UserbaseDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

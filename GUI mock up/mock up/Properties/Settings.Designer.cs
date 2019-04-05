@@ -33,5 +33,16 @@ namespace mock_up.Properties {
                 return ((string)(this["Quicker_QueueConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=quickerproject.database.windows.net;Initial Catalog=Userbase;Persist " +
+            "Security Info=True;User ID=user;Password=Mwsu1234")]
+        public string UserbaseConnectionString {
+            get {
+                return ((string)(this["UserbaseConnectionString"]));
+            }
+        }
     }
 }

@@ -41,29 +41,33 @@
             this.Queuebut = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.businessDataGridView = new System.Windows.Forms.DataGridView();
             this.businessBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quicker_QueueDataSet = new mock_up.Quicker_QueueDataSet();
             this.businessTableAdapter = new mock_up.Quicker_QueueDataSetTableAdapters.BusinessTableAdapter();
             this.tableAdapterManager = new mock_up.Quicker_QueueDataSetTableAdapters.TableAdapterManager();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.busNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.busTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.openHourDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.closeHourDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userbaseDataSet = new mock_up.UserbaseDataSet();
+            this.businessBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.businessTableAdapter1 = new mock_up.UserbaseDataSetTableAdapters.BusinessTableAdapter();
+            this.tableAdapterManager1 = new mock_up.UserbaseDataSetTableAdapters.TableAdapterManager();
+            this.businessDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.businessDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userbaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.businessDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // FiltercomboBox
             // 
             this.FiltercomboBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.FiltercomboBox.Items.AddRange(new object[] {
-            " ",
+            "",
             "Restraunt"});
             this.FiltercomboBox.Location = new System.Drawing.Point(396, 90);
             this.FiltercomboBox.Margin = new System.Windows.Forms.Padding(4);
@@ -120,6 +124,9 @@
             // 
             this.OpencomboBox.BackColor = System.Drawing.SystemColors.Control;
             this.OpencomboBox.FormattingEnabled = true;
+            this.OpencomboBox.Items.AddRange(new object[] {
+            "am",
+            "pm"});
             this.OpencomboBox.Location = new System.Drawing.Point(229, 121);
             this.OpencomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.OpencomboBox.Name = "OpencomboBox";
@@ -131,6 +138,9 @@
             // 
             this.ClosecomboBox.BackColor = System.Drawing.SystemColors.Control;
             this.ClosecomboBox.FormattingEnabled = true;
+            this.ClosecomboBox.Items.AddRange(new object[] {
+            "am",
+            "pm"});
             this.ClosecomboBox.Location = new System.Drawing.Point(437, 121);
             this.ClosecomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClosecomboBox.Name = "ClosecomboBox";
@@ -189,25 +199,6 @@
             this.panel2.Size = new System.Drawing.Size(96, 46);
             this.panel2.TabIndex = 1;
             // 
-            // businessDataGridView
-            // 
-            this.businessDataGridView.AutoGenerateColumns = false;
-            this.businessDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.businessDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.usernameDataGridViewTextBoxColumn,
-            this.passDataGridViewTextBoxColumn,
-            this.busNameDataGridViewTextBoxColumn,
-            this.busTypeDataGridViewTextBoxColumn,
-            this.openHourDataGridViewTextBoxColumn,
-            this.closeHourDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn});
-            this.businessDataGridView.DataSource = this.businessBindingSource;
-            this.businessDataGridView.Location = new System.Drawing.Point(4, 161);
-            this.businessDataGridView.Name = "businessDataGridView";
-            this.businessDataGridView.RowTemplate.Height = 24;
-            this.businessDataGridView.Size = new System.Drawing.Size(711, 331);
-            this.businessDataGridView.TabIndex = 13;
-            // 
             // businessBindingSource
             // 
             this.businessBindingSource.DataMember = "Business";
@@ -230,49 +221,74 @@
             this.tableAdapterManager.OrdersTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = mock_up.Quicker_QueueDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // usernameDataGridViewTextBoxColumn
+            // userbaseDataSet
             // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.Visible = false;
+            this.userbaseDataSet.DataSetName = "UserbaseDataSet";
+            this.userbaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // passDataGridViewTextBoxColumn
+            // businessBindingSource1
             // 
-            this.passDataGridViewTextBoxColumn.DataPropertyName = "pass";
-            this.passDataGridViewTextBoxColumn.HeaderText = "pass";
-            this.passDataGridViewTextBoxColumn.Name = "passDataGridViewTextBoxColumn";
-            this.passDataGridViewTextBoxColumn.Visible = false;
+            this.businessBindingSource1.DataMember = "Business";
+            this.businessBindingSource1.DataSource = this.userbaseDataSet;
             // 
-            // busNameDataGridViewTextBoxColumn
+            // businessTableAdapter1
             // 
-            this.busNameDataGridViewTextBoxColumn.DataPropertyName = "BusName";
-            this.busNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.busNameDataGridViewTextBoxColumn.Name = "busNameDataGridViewTextBoxColumn";
+            this.businessTableAdapter1.ClearBeforeFill = true;
             // 
-            // busTypeDataGridViewTextBoxColumn
+            // tableAdapterManager1
             // 
-            this.busTypeDataGridViewTextBoxColumn.DataPropertyName = "BusType";
-            this.busTypeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.busTypeDataGridViewTextBoxColumn.Name = "busTypeDataGridViewTextBoxColumn";
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.BusinessTableAdapter = this.businessTableAdapter1;
+            this.tableAdapterManager1.CustomerTableAdapter = null;
+            this.tableAdapterManager1.OrdersTableAdapter = null;
+            this.tableAdapterManager1.UpdateOrder = mock_up.UserbaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // openHourDataGridViewTextBoxColumn
+            // businessDataGridView
             // 
-            this.openHourDataGridViewTextBoxColumn.DataPropertyName = "openHour";
-            this.openHourDataGridViewTextBoxColumn.HeaderText = "Opens";
-            this.openHourDataGridViewTextBoxColumn.Name = "openHourDataGridViewTextBoxColumn";
+            this.businessDataGridView.AutoGenerateColumns = false;
+            this.businessDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.businessDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.businessDataGridView.DataSource = this.businessBindingSource1;
+            this.businessDataGridView.Location = new System.Drawing.Point(16, 152);
+            this.businessDataGridView.Name = "businessDataGridView";
+            this.businessDataGridView.RowTemplate.Height = 24;
+            this.businessDataGridView.Size = new System.Drawing.Size(699, 390);
+            this.businessDataGridView.TabIndex = 12;
             // 
-            // closeHourDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn7
             // 
-            this.closeHourDataGridViewTextBoxColumn.DataPropertyName = "closeHour";
-            this.closeHourDataGridViewTextBoxColumn.HeaderText = "Closes";
-            this.closeHourDataGridViewTextBoxColumn.Name = "closeHourDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "BusName";
+            this.dataGridViewTextBoxColumn7.HeaderText = "BusName";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // emailDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn6
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "BusType";
+            this.dataGridViewTextBoxColumn6.HeaderText = "BusType";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "email";
+            this.dataGridViewTextBoxColumn3.HeaderText = "email";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "openHour";
+            this.dataGridViewTextBoxColumn4.HeaderText = "openHour";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "closeHour";
+            this.dataGridViewTextBoxColumn5.HeaderText = "closeHour";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // Search
             // 
@@ -297,9 +313,11 @@
             this.Text = "Search";
             this.Load += new System.EventHandler(this.Search_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.businessDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userbaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.businessDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,17 +337,20 @@
         private System.Windows.Forms.Button Queuebut;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView businessDataGridView;
         private Quicker_QueueDataSet quicker_QueueDataSet;
         private System.Windows.Forms.BindingSource businessBindingSource;
         private Quicker_QueueDataSetTableAdapters.BusinessTableAdapter businessTableAdapter;
         private Quicker_QueueDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn busNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn busTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn openHourDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn closeHourDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private UserbaseDataSet userbaseDataSet;
+        private System.Windows.Forms.BindingSource businessBindingSource1;
+        private UserbaseDataSetTableAdapters.BusinessTableAdapter businessTableAdapter1;
+        private UserbaseDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.DataGridView businessDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }
