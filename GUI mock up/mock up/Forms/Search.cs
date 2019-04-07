@@ -92,5 +92,30 @@ namespace mock_up
         {
             SearchtextBox.Clear();
         }
+
+        //inserts selected business into favorites table for later
+        private void favoriteBut_Click(object sender, EventArgs e)
+        {
+            //checks to see if u selected a row
+            if (businessDataGridView.SelectedRows.Count != 0)
+            {
+                //takes selected rows and gets the username 
+                DataGridViewRow row = businessDataGridView.SelectedRows[0];
+                string business = row.Cells["Here"].Value.ToString();
+
+                //creates queary and executes
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "INSERT INTO Favorites VALUES(@customer, @business)";
+                cmd.Parameters.AddWithValue("@customer", username);
+                cmd.Parameters.AddWithValue("@business", business);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please select a business to favorite");
+            }
+        }
     }
 }
