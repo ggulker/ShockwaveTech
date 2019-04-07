@@ -29,7 +29,7 @@ namespace mock_up.Forms
         private void QueueBut_Click(object sender, EventArgs e)
         {
             //creates connection then adds a new order
-            SqlConnection con = new SqlConnection("Data Source=shockwave.database.windows.net;Initial Catalog=Quicker Queue;;User ID=user;Password=Mwsu1234");
+            SqlConnection con = new SqlConnection("Data Source=quickerproject.database.windows.net;Initial Catalog=Userbase;Persist Security Info=True;User ID=user;Password=Mwsu1234");
             SqlCommand cmd = con.CreateCommand();
             //creates query and fills with specific info
             cmd.CommandText = "INSERT INTO orders VALUES(@customer, @business)";

@@ -55,6 +55,8 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Here = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.favoriteBut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).BeginInit();
@@ -68,7 +70,8 @@
             this.FiltercomboBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.FiltercomboBox.Items.AddRange(new object[] {
             "",
-            "Restraunt"});
+            "Restraunt",
+            "Favorites"});
             this.FiltercomboBox.Location = new System.Drawing.Point(396, 90);
             this.FiltercomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.FiltercomboBox.Name = "FiltercomboBox";
@@ -252,11 +255,13 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
+            this.dataGridViewTextBoxColumn5,
+            this.Here});
             this.businessDataGridView.DataSource = this.businessBindingSource1;
             this.businessDataGridView.Location = new System.Drawing.Point(16, 152);
             this.businessDataGridView.Name = "businessDataGridView";
             this.businessDataGridView.RowTemplate.Height = 24;
+            this.businessDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.businessDataGridView.Size = new System.Drawing.Size(699, 390);
             this.businessDataGridView.TabIndex = 12;
             // 
@@ -290,12 +295,30 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "closeHour";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
+            // Here
+            // 
+            this.Here.DataPropertyName = "username";
+            this.Here.HeaderText = "Column1";
+            this.Here.Name = "Here";
+            this.Here.Visible = false;
+            // 
+            // favoriteBut
+            // 
+            this.favoriteBut.Location = new System.Drawing.Point(629, 112);
+            this.favoriteBut.Name = "favoriteBut";
+            this.favoriteBut.Size = new System.Drawing.Size(75, 23);
+            this.favoriteBut.TabIndex = 13;
+            this.favoriteBut.Text = "Favorite";
+            this.favoriteBut.UseVisualStyleBackColor = true;
+            this.favoriteBut.Click += new System.EventHandler(this.favoriteBut_Click);
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(727, 554);
+            this.Controls.Add(this.favoriteBut);
             this.Controls.Add(this.businessDataGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Queuebut);
@@ -352,5 +375,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Here;
+        private System.Windows.Forms.Button favoriteBut;
     }
 }
