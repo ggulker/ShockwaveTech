@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,16 +10,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
 using Timer = System.Windows.Forms.Timer;
+using mock_up.Classes;
 
 namespace mock_up
 {
     public partial class BusHome : Form
     {
         //need the business name to get orders
-        string BusName;
-        public BusHome(string n)
+        string username;
+        string email;
+        DBController dB = new DBController();
+
+        public BusHome(Business n)
         {
-            BusName = n;
+            username = n.Username;
+            email = n.Email;
             InitializeComponent();
         }
 
@@ -33,8 +39,8 @@ namespace mock_up
         private void BusHome_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'userbaseDataSet.Orders' table. You can move, or remove it, as needed.
-            this.ordersTableAdapter1.FillBy(this.userbaseDataSet.Orders, BusName);
-            SetTimer(sender,e);
+            this.ordersTableAdapter1.FillBy(this.userbaseDataSet.Orders, username);
+            SetTimer(sender, e);
         }
 
         //just restarts program
@@ -55,7 +61,14 @@ namespace mock_up
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            this.ordersTableAdapter1.FillBy(this.userbaseDataSet.Orders, BusName);
+            this.ordersTableAdapter1.FillBy(this.userbaseDataSet.Orders, username);
+        }
+
+        private void notifyBut_Click(object sender, EventArgs e)
+        {
+            //grabs name from selected row then calls the controller to grab the email
+            string custEmail = dB.CustEmail
+                (ordersDataGridView.SelectedRows[0].Cells["Customer"].Value.ToString());
         }
     }
 }

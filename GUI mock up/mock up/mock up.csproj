@@ -48,6 +48,7 @@
     <Compile Include="Classes\Aes_Encryption.cs" />
     <Compile Include="Classes\Business.cs" />
     <Compile Include="Classes\Customer.cs" />
+    <Compile Include="Classes\DBController.cs" />
     <Compile Include="Classes\Notification.cs" />
     <Compile Include="Forms\BusHome.cs">
       <SubType>Form</SubType>
@@ -60,6 +61,12 @@
     </Compile>
     <Compile Include="Forms\BusCreate.Designer.cs">
       <DependentUpon>BusCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CheckQueue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CheckQueue.Designer.cs">
+      <DependentUpon>CheckQueue.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NewChoice.cs">
       <SubType>Form</SubType>
@@ -121,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BusCreate.resx">
       <DependentUpon>BusCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CheckQueue.resx">
+      <DependentUpon>CheckQueue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewChoice.resx">
       <DependentUpon>NewChoice.cs</DependentUpon>

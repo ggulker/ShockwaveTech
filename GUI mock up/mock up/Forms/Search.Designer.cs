@@ -57,6 +57,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Here = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.favoriteBut = new System.Windows.Forms.Button();
+            this.checkBut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).BeginInit();
@@ -260,6 +261,7 @@
             this.businessDataGridView.DataSource = this.businessBindingSource1;
             this.businessDataGridView.Location = new System.Drawing.Point(16, 152);
             this.businessDataGridView.Name = "businessDataGridView";
+            this.businessDataGridView.ReadOnly = true;
             this.businessDataGridView.RowTemplate.Height = 24;
             this.businessDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.businessDataGridView.Size = new System.Drawing.Size(699, 390);
@@ -270,41 +272,47 @@
             this.dataGridViewTextBoxColumn7.DataPropertyName = "BusName";
             this.dataGridViewTextBoxColumn7.HeaderText = "BusName";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "BusType";
             this.dataGridViewTextBoxColumn6.HeaderText = "BusType";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "email";
             this.dataGridViewTextBoxColumn3.HeaderText = "email";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "openHour";
             this.dataGridViewTextBoxColumn4.HeaderText = "openHour";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "closeHour";
             this.dataGridViewTextBoxColumn5.HeaderText = "closeHour";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // Here
             // 
             this.Here.DataPropertyName = "username";
             this.Here.HeaderText = "Column1";
             this.Here.Name = "Here";
+            this.Here.ReadOnly = true;
             this.Here.Visible = false;
             // 
             // favoriteBut
             // 
-            this.favoriteBut.Location = new System.Drawing.Point(629, 112);
+            this.favoriteBut.Location = new System.Drawing.Point(628, 129);
             this.favoriteBut.Name = "favoriteBut";
             this.favoriteBut.Size = new System.Drawing.Size(75, 23);
             this.favoriteBut.TabIndex = 13;
@@ -312,12 +320,23 @@
             this.favoriteBut.UseVisualStyleBackColor = true;
             this.favoriteBut.Click += new System.EventHandler(this.favoriteBut_Click);
             // 
+            // checkBut
+            // 
+            this.checkBut.Location = new System.Drawing.Point(628, 91);
+            this.checkBut.Name = "checkBut";
+            this.checkBut.Size = new System.Drawing.Size(75, 23);
+            this.checkBut.TabIndex = 14;
+            this.checkBut.Text = "Check";
+            this.checkBut.UseVisualStyleBackColor = true;
+            this.checkBut.Click += new System.EventHandler(this.checkBut_Click);
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(727, 554);
+            this.Controls.Add(this.checkBut);
             this.Controls.Add(this.favoriteBut);
             this.Controls.Add(this.businessDataGridView);
             this.Controls.Add(this.panel1);
@@ -364,7 +383,6 @@
         private System.Windows.Forms.BindingSource businessBindingSource;
         private Quicker_QueueDataSetTableAdapters.BusinessTableAdapter businessTableAdapter;
         private Quicker_QueueDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private UserbaseDataSet userbaseDataSet;
         private System.Windows.Forms.BindingSource businessBindingSource1;
         private UserbaseDataSetTableAdapters.BusinessTableAdapter businessTableAdapter1;
@@ -377,5 +395,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Here;
         private System.Windows.Forms.Button favoriteBut;
+        private System.Windows.Forms.Button checkBut;
     }
 }

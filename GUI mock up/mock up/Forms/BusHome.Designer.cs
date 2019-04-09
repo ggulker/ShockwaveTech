@@ -39,7 +39,9 @@
             this.ordersTableAdapter1 = new mock_up.UserbaseDataSetTableAdapters.OrdersTableAdapter();
             this.tableAdapterManager1 = new mock_up.UserbaseDataSetTableAdapters.TableAdapterManager();
             this.ordersDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notifyBut = new System.Windows.Forms.Button();
+            this.removeBut = new System.Windows.Forms.Button();
+            this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userbaseDataSet)).BeginInit();
@@ -98,27 +100,51 @@
             this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager1.BusinessTableAdapter = null;
             this.tableAdapterManager1.CustomerTableAdapter = null;
+            this.tableAdapterManager1.FavoritesTableAdapter = null;
             this.tableAdapterManager1.OrdersTableAdapter = this.ordersTableAdapter1;
             this.tableAdapterManager1.UpdateOrder = mock_up.UserbaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // ordersDataGridView
             // 
+            this.ordersDataGridView.AllowUserToAddRows = false;
+            this.ordersDataGridView.AllowUserToDeleteRows = false;
             this.ordersDataGridView.AutoGenerateColumns = false;
             this.ordersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2});
+            this.Customer});
             this.ordersDataGridView.DataSource = this.ordersBindingSource1;
             this.ordersDataGridView.Location = new System.Drawing.Point(12, 13);
             this.ordersDataGridView.Name = "ordersDataGridView";
+            this.ordersDataGridView.ReadOnly = true;
             this.ordersDataGridView.RowTemplate.Height = 24;
+            this.ordersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ordersDataGridView.Size = new System.Drawing.Size(189, 415);
             this.ordersDataGridView.TabIndex = 2;
             // 
-            // dataGridViewTextBoxColumn2
+            // notifyBut
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Customer";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Customer";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.notifyBut.Location = new System.Drawing.Point(220, 404);
+            this.notifyBut.Name = "notifyBut";
+            this.notifyBut.Size = new System.Drawing.Size(75, 23);
+            this.notifyBut.TabIndex = 3;
+            this.notifyBut.Text = "Notify";
+            this.notifyBut.UseVisualStyleBackColor = true;
+            this.notifyBut.Click += new System.EventHandler(this.notifyBut_Click);
+            // 
+            // removeBut
+            // 
+            this.removeBut.Location = new System.Drawing.Point(220, 375);
+            this.removeBut.Name = "removeBut";
+            this.removeBut.Size = new System.Drawing.Size(75, 23);
+            this.removeBut.TabIndex = 4;
+            this.removeBut.Text = "Remove";
+            this.removeBut.UseVisualStyleBackColor = true;
+            // 
+            // Customer
+            // 
+            this.Customer.DataPropertyName = "Customer";
+            this.Customer.HeaderText = "Customer";
+            this.Customer.Name = "Customer";
             // 
             // BusHome
             // 
@@ -126,6 +152,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(804, 452);
+            this.Controls.Add(this.removeBut);
+            this.Controls.Add(this.notifyBut);
             this.Controls.Add(this.ordersDataGridView);
             this.Controls.Add(this.logOutBut);
             this.Name = "BusHome";
@@ -152,6 +180,8 @@
         private UserbaseDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter1;
         private UserbaseDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.DataGridView ordersDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button notifyBut;
+        private System.Windows.Forms.Button removeBut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer;
     }
 }

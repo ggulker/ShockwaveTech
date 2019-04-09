@@ -34,7 +34,7 @@ namespace mock_up
                 {
                     Business create = new Business(username,pass,email,open,close,type,name);
                     MessageBox.Show("Your account has been created!");
-                    BusHome start = new BusHome(username);
+                    BusHome start = new BusHome(create);
                     start.Show();
                     this.Close();
                 }

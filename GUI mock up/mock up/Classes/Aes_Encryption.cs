@@ -24,7 +24,7 @@ namespace mock_up
             ServiceProvider = new AesCryptoServiceProvider
             {
                 BlockSize = 128,
-                KeySize = 256
+                KeySize = 128
             };
             ServiceProvider.GenerateIV();
             ServiceProvider.Mode = CipherMode.CBC;
