@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mock_up.Classes;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -7,19 +8,38 @@ using System.Threading.Tasks;
 
 namespace mock_up
 {
-    abstract class User
+    public abstract class User
     {
         protected string username;
         protected string pass = null;
         protected string email;
         protected SqlDataReader userData;
         //creates a connection to our database
+        protected DBController dB = new DBController();
         protected SqlConnection con = new SqlConnection
             ("Data Source=quickerproject.database.windows.net;Initial Catalog=Userbase;Persist Security Info=True;User ID=user;Password=Mwsu1234");
         public User(string u)
         {
             //gets all info on passed in username
             Download(u);
+        }
+
+        //getter for email
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+        }
+
+        //getter for username
+        public string Username
+        {
+            get
+            {
+                return username;
+            }
         }
 
         //gets all our customer or business info from the server

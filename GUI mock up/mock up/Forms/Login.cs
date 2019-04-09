@@ -16,22 +16,24 @@ namespace mock_up
     {
         //used to see what button they pressed on the choice form
         char type;
-
+        Business business;
+        Customer customer;
         public Login(char t)
         {
             type = t;
             InitializeComponent();
         }
 
+        //once login is pressed begins logincheck and determines what kind of account
+        //is being logged into
         private void loginBut_Click(object sender, EventArgs e)
         {
-            bool pass = loginCheck();
             //checks if it logged in
-            if (pass)
+            if (loginCheck())
                 //wether its a business or customer
                 if (type == 'B')
                 {
-                    BusHome bus = new BusHome(usernameText.Text);
+                    BusHome bus = new BusHome(business);
                     bus.Show();
                     this.Close();
                 }
@@ -51,10 +53,12 @@ namespace mock_up
             //holds the username passed in
             string user = usernameText.Text;
 
+            //determines what login is being attempted
             if (type == 'B')
             {
-                Business login = new Business(user);
-                if (login.PassCheck(passText.Text))
+                business = new Business(user);
+                //checking password
+                if (business.PassCheck(passText.Text))
                 {
                     return true;
                 }
@@ -63,8 +67,8 @@ namespace mock_up
             }
             else
             {
-                Customer login = new Customer(user);
-                if (login.PassCheck(passText.Text))
+                customer = new Customer(user);
+                if (customer.PassCheck(passText.Text))
                 {
                     return true;
                 }
@@ -73,6 +77,7 @@ namespace mock_up
             }
         }
 
+        //just restarts the program
         private void cancelBut_Click(object sender, EventArgs e)
         {
             choice cancel = new choice();

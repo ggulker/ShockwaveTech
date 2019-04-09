@@ -1,4 +1,5 @@
-﻿using mock_up.Forms;
+﻿using mock_up.Classes;
+using mock_up.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +17,7 @@ namespace mock_up
     {
         string username;
         private SqlConnection con = new SqlConnection("Data Source=quickerproject.database.windows.net;Initial Catalog=Userbase;Persist Security Info=True;User ID=user;Password=Mwsu1234");
-        SqlDataAdapter adapt;
-        DataTable dt;
+        DBController dB = new DBController();
 
         public Search(string u)
         {
@@ -25,7 +25,7 @@ namespace mock_up
             InitializeComponent();
         }
 
-
+        //fills table with all businesses on load
         private void Search_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'userbaseDataSet.Business' table. You can move, or remove it, as needed.
@@ -40,6 +40,7 @@ namespace mock_up
             this.Close();
         }
 
+        //opens new form to confirm queue
         private void QueueBut_Click(object sender, EventArgs e)
         {
             //makes sure at least one row is selected
@@ -78,13 +79,10 @@ namespace mock_up
             {
                 query += " AND closeHour= " + ClosetextBox.Text;
             }
-            //opens connection and creates new table based on queary then replaces current table
-            con.Open();
-            adapt = new SqlDataAdapter(query,con);
-            dt = new DataTable();
-            adapt.Fill(dt);
+
+            //uses controller to search and then returns new table
+            DataTable dt = dB.SearchBus(query);
             businessDataGridView.DataSource = dt;
-            con.Close();
         }
 
         //empties search text box if clicked
@@ -103,18 +101,28 @@ namespace mock_up
                 DataGridViewRow row = businessDataGridView.SelectedRows[0];
                 string business = row.Cells["Here"].Value.ToString();
 
-                //creates queary and executes
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "INSERT INTO Favorites VALUES(@customer, @business)";
-                cmd.Parameters.AddWithValue("@customer", username);
-                cmd.Parameters.AddWithValue("@business", business);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
+                //uses controller to add to orders table
+                dB.CreateOrder(username, business);
             }
             else
             {
                 MessageBox.Show("Please select a business to favorite");
+            }
+        }
+
+        //lets a user see the queue before queing themselves
+        private void checkBut_Click(object sender, EventArgs e)
+        {
+            //checks to see if u selected a row
+            if (businessDataGridView.SelectedRows.Count != 0)
+            {
+                DataGridViewRow row = businessDataGridView.SelectedRows[0];
+                CheckQueue check = new CheckQueue(row.Cells["Here"].Value.ToString());
+                check.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a business to check on");
             }
         }
     }

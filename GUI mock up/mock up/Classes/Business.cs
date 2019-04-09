@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace mock_up
 {
-    class Business : User
+    public class Business : User
     {
         Aes_Encryption aes = new Aes_Encryption();
         public int openHour;
@@ -15,11 +15,13 @@ namespace mock_up
         public string busType;
         public string busName;
 
+        //used for logging in
         public Business(string u) : base(u)
         {
 
         }
 
+        //constructor used for making a new account
         public Business(string u, string p, string e, string o, string c, string t, string n) : base(u)
         {
             //sense we use the username to download info in our base constructor
@@ -71,26 +73,15 @@ namespace mock_up
             //all strings returned have alot of empty spaces removing those
             username = username.Replace(" ", "");
             pass = pass.Replace(" ", "");
-            email = email.Replace(" ", "");
+            email = Email.Replace(" ", "");
             busName = busName.Replace(" ", "");
             busType = busType.Replace(" ", "");
         }
 
+        //creates business in database by calling on the controller
         protected override void Create()
         {
-            SqlCommand create = con.CreateCommand();
-            create.CommandText = "INSERT INTO Business VALUES (";
-            string u = "'" + username + "', ";
-            string p = "'" + pass + "', ";
-            string e = "'" + email + "', ";
-            string o = openHour.ToString() + ", ";
-            string c = closeHour.ToString() + ", ";
-            string t = "'" + busType + "', ";
-            string n = "'" + busName + "')";
-            create.CommandText += u + p + e + o + c + t + n;
-            con.Open();
-            create.ExecuteNonQuery();
-            con.Close();
+            dB.CreateBus(username, pass, Email, openHour, closeHour, busType, busName);
         }
     }
 }
