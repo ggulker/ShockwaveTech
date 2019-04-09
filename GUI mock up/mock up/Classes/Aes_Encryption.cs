@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * References:
+ * https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.aes?view=netframework-4.7.2
+ * https://www.youtube.com/watch?v=LOmgFxPHop0
+ * https://stackoverflow.com/questions/17195969/generating-aes-256-bit-key-value
+ * 
+ * 
+ * */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,6 +49,7 @@ namespace mock_up
         }
 
 
+        //Create AES key based on password
         private static byte[] CreateKey(string password, int keyBytes = 32)
         {
             Encoding utf8 = Encoding.UTF8;
