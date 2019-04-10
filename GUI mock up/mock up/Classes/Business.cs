@@ -15,7 +15,7 @@ namespace mock_up
         public int closeHour;
         public string busType;
         public string busName;
-
+        private string emailPass;
         //used for logging in
         public Business(string u, string p) : base(u,p)
         {
@@ -23,7 +23,7 @@ namespace mock_up
         }
 
         //constructor used for making a new account
-        public Business(string u, string p, string e, string o, string c, string t, string n) : base(u,p)
+        public Business(string u, string p, string e, string o, string c, string t, string n, string ep) : base(u,p)
         {
             //sense we use the username to download info in our base constructor
             //if there is any info that means the account already exists
@@ -48,6 +48,7 @@ namespace mock_up
                 openHour = Convert.ToInt32(o);
                 busType = t;
                 busName = n;
+                emailPass = ep;
                 Create();
             }
         }
@@ -82,7 +83,7 @@ namespace mock_up
         //creates business in database by calling on the controller
         protected override void Create()
         {
-            dB.CreateBus(username, pass, Email, openHour, closeHour, busType, busName);
+            dB.CreateBus(username, pass, Email, openHour, closeHour, busType, busName, emailPass);
         }
     }
 }

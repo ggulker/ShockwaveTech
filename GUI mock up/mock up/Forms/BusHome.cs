@@ -79,5 +79,10 @@ namespace mock_up
             string custEmail = dB.CustEmail
                 (ordersDataGridView.SelectedRows[0].Cells["Customer"].Value.ToString());
         }
+
+        private void removeBut_Click(object sender, EventArgs e)
+        {
+            dB.RemoveOrder(ordersDataGridView.SelectedRows[0].Cells["Customer"].Value.ToString(), username);
+        }
     }
 }
