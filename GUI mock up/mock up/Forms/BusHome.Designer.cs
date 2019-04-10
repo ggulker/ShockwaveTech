@@ -73,9 +73,10 @@
             // 
             // logOutBut
             // 
-            this.logOutBut.Location = new System.Drawing.Point(653, 13);
+            this.logOutBut.Location = new System.Drawing.Point(490, 11);
+            this.logOutBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logOutBut.Name = "logOutBut";
-            this.logOutBut.Size = new System.Drawing.Size(131, 39);
+            this.logOutBut.Size = new System.Drawing.Size(98, 32);
             this.logOutBut.TabIndex = 1;
             this.logOutBut.Text = "Log Out";
             this.logOutBut.UseVisualStyleBackColor = true;
@@ -109,16 +110,19 @@
             this.ordersDataGridView.AllowUserToAddRows = false;
             this.ordersDataGridView.AllowUserToDeleteRows = false;
             this.ordersDataGridView.AutoGenerateColumns = false;
+            this.ordersDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.ordersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Customer});
             this.ordersDataGridView.DataSource = this.ordersBindingSource1;
-            this.ordersDataGridView.Location = new System.Drawing.Point(12, 13);
+            this.ordersDataGridView.GridColor = System.Drawing.SystemColors.Control;
+            this.ordersDataGridView.Location = new System.Drawing.Point(9, 11);
+            this.ordersDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ordersDataGridView.Name = "ordersDataGridView";
             this.ordersDataGridView.ReadOnly = true;
             this.ordersDataGridView.RowTemplate.Height = 24;
             this.ordersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ordersDataGridView.Size = new System.Drawing.Size(189, 415);
+            this.ordersDataGridView.Size = new System.Drawing.Size(142, 337);
             this.ordersDataGridView.TabIndex = 2;
             // 
             // Customer
@@ -130,34 +134,39 @@
             // 
             // notifyBut
             // 
-            this.notifyBut.Location = new System.Drawing.Point(220, 404);
+            this.notifyBut.BackColor = System.Drawing.Color.Lime;
+            this.notifyBut.Location = new System.Drawing.Point(165, 319);
+            this.notifyBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.notifyBut.Name = "notifyBut";
-            this.notifyBut.Size = new System.Drawing.Size(75, 23);
+            this.notifyBut.Size = new System.Drawing.Size(56, 28);
             this.notifyBut.TabIndex = 3;
             this.notifyBut.Text = "Notify";
-            this.notifyBut.UseVisualStyleBackColor = true;
+            this.notifyBut.UseVisualStyleBackColor = false;
             this.notifyBut.Click += new System.EventHandler(this.notifyBut_Click);
             // 
             // removeBut
             // 
-            this.removeBut.Location = new System.Drawing.Point(220, 375);
+            this.removeBut.BackColor = System.Drawing.Color.Red;
+            this.removeBut.Location = new System.Drawing.Point(165, 284);
+            this.removeBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.removeBut.Name = "removeBut";
-            this.removeBut.Size = new System.Drawing.Size(75, 23);
+            this.removeBut.Size = new System.Drawing.Size(56, 31);
             this.removeBut.TabIndex = 4;
             this.removeBut.Text = "Remove";
-            this.removeBut.UseVisualStyleBackColor = true;
+            this.removeBut.UseVisualStyleBackColor = false;
             this.removeBut.Click += new System.EventHandler(this.removeBut_Click);
             // 
             // BusHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(804, 452);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(603, 367);
             this.Controls.Add(this.removeBut);
             this.Controls.Add(this.notifyBut);
             this.Controls.Add(this.ordersDataGridView);
             this.Controls.Add(this.logOutBut);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BusHome";
             this.Text = "Business Home";
             this.Load += new System.EventHandler(this.BusHome_Load);
