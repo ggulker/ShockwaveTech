@@ -10,6 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// login for all users that checks account info and password sent
+/// </summary>
 namespace mock_up
 {
     public partial class Login : Form
@@ -56,7 +59,7 @@ namespace mock_up
             //determines what login is being attempted
             if (type == 'B')
             {
-                business = new Business(user);
+                business = new Business(user,passText.Text);
                 //checking password
                 if (business.PassCheck(passText.Text))
                 {
@@ -67,7 +70,7 @@ namespace mock_up
             }
             else
             {
-                customer = new Customer(user);
+                customer = new Customer(user,passText.Text);
                 if (customer.PassCheck(passText.Text))
                 {
                     return true;

@@ -16,7 +16,7 @@ using System.Security.Cryptography;
 
 namespace mock_up
 {
-    class Aes_Encryption
+    public class Aes_Encryption
     {
         AesCryptoServiceProvider ServiceProvider;
         public Aes_Encryption()

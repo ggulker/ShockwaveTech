@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/// <summary>
+/// decides what kind of user is using the system
+/// </summary>
 namespace mock_up
 {
     public partial class choice : Form

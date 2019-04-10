@@ -4,25 +4,26 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// business class that is used for all business users throughout the program
+/// </summary>
 namespace mock_up
 {
     public class Business : User
     {
-        Aes_Encryption aes = new Aes_Encryption();
         public int openHour;
         public int closeHour;
         public string busType;
         public string busName;
 
         //used for logging in
-        public Business(string u) : base(u)
+        public Business(string u, string p) : base(u,p)
         {
 
         }
 
         //constructor used for making a new account
-        public Business(string u, string p, string e, string o, string c, string t, string n) : base(u)
+        public Business(string u, string p, string e, string o, string c, string t, string n) : base(u,p)
         {
             //sense we use the username to download info in our base constructor
             //if there is any info that means the account already exists
@@ -30,10 +31,9 @@ namespace mock_up
                 throw new System.InvalidOperationException("An account already exists with this username");
             else
             {
-                string OldPassword = p;
-                p = aes.Encrypt(p, OldPassword);
-                u = aes.Encrypt(u, OldPassword);
-                e = aes.Encrypt(e, OldPassword);
+                //p = aes.Encrypt(p, OldPassword);
+                //u = aes.Encrypt(u, OldPassword);
+                //e = aes.Encrypt(e, OldPassword);
                 //MessageBox.Show(aes.Encrypt(p,p));
                 //MessageBox.Show(aes.Encrypt(u,p));
                 //MessageBox.Show(aes.Encrypt(e,p));
@@ -70,6 +70,7 @@ namespace mock_up
             busType = userData["BusType"].ToString();
             openHour = Convert.ToInt16(userData["openHour"].ToString());
             closeHour = Convert.ToInt16(userData["closeHour"].ToString());
+            //DECRYPT ALL THINGS HERE
             //all strings returned have alot of empty spaces removing those
             username = username.Replace(" ", "");
             pass = pass.Replace(" ", "");

@@ -5,7 +5,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// abstract class used for all users holding most information for a user class
+/// </summary>
 namespace mock_up
 {
     public abstract class User
@@ -13,14 +15,19 @@ namespace mock_up
         protected string username;
         protected string pass = null;
         protected string email;
+        protected Aes_Encryption aes = new Aes_Encryption();
         protected SqlDataReader userData;
+        protected string OldPassword;
         //creates a connection to our database
         protected DBController dB = new DBController();
         protected SqlConnection con = new SqlConnection
             ("Data Source=quickerproject.database.windows.net;Initial Catalog=Userbase;Persist Security Info=True;User ID=user;Password=Mwsu1234");
-        public User(string u)
+        public User(string u,string p)
         {
             //gets all info on passed in username
+            //ALL CONSTRUCTORS START HERE
+            //OldPassword = p;
+            //u = aes.Encrypt(u, OldPassword);
             Download(u);
         }
 
@@ -61,6 +68,8 @@ namespace mock_up
                 userData = r;
                 CopyInfo();
             }
+
+            r.Close();
             con.Close();
         }
 

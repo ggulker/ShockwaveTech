@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mock_up.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,12 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/// <summary>
+/// final screen used as a confirmation and more info
+/// </summary>
 namespace mock_up.Forms
 {
     public partial class Finalize : Form
     {
         string customer, business;
+        DBController dB = new DBController();
+
         public Finalize(string b, string c)
         {
             customer = c;
@@ -21,24 +26,17 @@ namespace mock_up.Forms
             InitializeComponent();
         }
 
+        //closes form
         private void CloseBut_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //calls controller to add to orders table
         private void QueueBut_Click(object sender, EventArgs e)
         {
-            //creates connection then adds a new order
-            SqlConnection con = new SqlConnection("Data Source=quickerproject.database.windows.net;Initial Catalog=Userbase;Persist Security Info=True;User ID=user;Password=Mwsu1234");
-            SqlCommand cmd = con.CreateCommand();
-            //creates query and fills with specific info
-            cmd.CommandText = "INSERT INTO orders VALUES(@customer, @business)";
-            cmd.Parameters.AddWithValue("@customer", customer);
-            cmd.Parameters.AddWithValue("@business", business);
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("completed");
+            dB.CreateOrder(customer, business);
+            MessageBox.Show("complete");
             this.Close();
         }
     }

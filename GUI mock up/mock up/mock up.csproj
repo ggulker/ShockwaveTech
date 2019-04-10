@@ -187,7 +187,6 @@
     </None>
     <None Include="UserbaseDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>UserbaseDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="UserbaseDataSet.xss">

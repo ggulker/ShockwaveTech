@@ -10,7 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/// <summary>
+/// Home page for customers to see and search businesses along with their options
+/// </summary>
 namespace mock_up
 {
     public partial class Search : Form
@@ -29,7 +31,9 @@ namespace mock_up
         private void Search_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'userbaseDataSet.Business' table. You can move, or remove it, as needed.
-            this.businessTableAdapter1.Fill(this.userbaseDataSet.Business);
+            //uses controller to search and then returns new table
+            DataTable dt = dB.GetTable("SELECT * FROM Business");
+            businessDataGridView.DataSource = dt;
         }
 
         //just restarts program
@@ -81,7 +85,7 @@ namespace mock_up
             }
 
             //uses controller to search and then returns new table
-            DataTable dt = dB.SearchBus(query);
+            DataTable dt = dB.GetTable(query);
             businessDataGridView.DataSource = dt;
         }
 
@@ -102,7 +106,7 @@ namespace mock_up
                 string business = row.Cells["Here"].Value.ToString();
 
                 //uses controller to add to orders table
-                dB.CreateOrder(username, business);
+                dB.CreateFavorite(username, business);
             }
             else
             {

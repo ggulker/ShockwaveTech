@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/// <summary>
+/// form used to create a new customer
+/// </summary>
 namespace mock_up
 {
     public partial class CustCreate : Form
@@ -17,6 +19,8 @@ namespace mock_up
             InitializeComponent();
         }
 
+        //collects all info from textboxes then creates a new customer class
+        //then opens a new Search form with new class
         private void Registerbutton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(UserIDtextBox.Text) || string.IsNullOrEmpty(PasswordtextBox.Text) || string.IsNullOrEmpty(EmailtextBox.Text))
