@@ -17,6 +17,7 @@ namespace mock_up
 {
     public partial class Login : Form
     {
+        Aes_Encryption aes = new Aes_Encryption();
         //used to see what button they pressed on the choice form
         char type;
         Business business;
@@ -49,7 +50,7 @@ namespace mock_up
             else
                 MessageBox.Show("Username/Password may be wrong please try again.");
         }
-        
+
         //connects to the database and sees if our username has a password and if it matches
         private bool loginCheck()
         {
@@ -61,7 +62,7 @@ namespace mock_up
             {
                 business = new Business(user,passText.Text);
                 //checking password
-                if (business.PassCheck(passText.Text))
+                if (business.PassCheck(aes.Encrypt(passText.Text, passText.Text)))
                 {
                     return true;
                 }

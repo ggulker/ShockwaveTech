@@ -1,12 +1,4 @@
-﻿/*
- * References:
- * https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.aes?view=netframework-4.7.2
- * https://www.youtube.com/watch?v=LOmgFxPHop0
- * https://stackoverflow.com/questions/17195969/generating-aes-256-bit-key-value
- * 
- * 
- * */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,48 +10,130 @@ namespace mock_up
 {
     public class Aes_Encryption
     {
-        AesCryptoServiceProvider ServiceProvider;
-        public Aes_Encryption()
+
+        //source:https://www.codeproject.com/Tips/1156169/Encrypt-Strings-with-Passwords-AES-SHA
+        //The Code Project Open License (CPOL) 1.02
+        public string Encrypt(string data,string key)
         {
-            ServiceProvider = new AesCryptoServiceProvider
+            string encData = null;
+            byte[][] keys = GetHashKeys(key);
+
+            try
             {
-                BlockSize = 128,
-                KeySize = 128
-            };
-            ServiceProvider.GenerateIV();
-            ServiceProvider.Mode = CipherMode.CBC;
-            ServiceProvider.Padding = PaddingMode.PKCS7;
+                encData = EncryptStringToBytes_Aes(data, keys[0], keys[1]);
+            }
+            catch (CryptographicException) { }
+            catch (ArgumentNullException) { }
+
+            return encData;
         }
-        public String Encrypt(String plaintext, string password)
+
+        public string Decrypt(string data, string key)
         {
-            ServiceProvider.Key = CreateKey(password);
-            ICryptoTransform transform = ServiceProvider.CreateEncryptor();
-            byte[] encrypted_bytes = transform.TransformFinalBlock(ASCIIEncoding.ASCII.GetBytes(plaintext), 0, plaintext.Length);
-            string str = Convert.ToBase64String(encrypted_bytes);
-            return str;
+            string decData = null;
+            byte[][] keys = GetHashKeys(key);
 
+            try
+            {
+                decData = DecryptStringFromBytes_Aes(data, keys[0], keys[1]);
+            }
+            catch (CryptographicException) { }
+            catch (ArgumentNullException) { }
+
+            return decData;
         }
-        public String Decrypt(String cipher_text)
+
+        private byte[][] GetHashKeys(string key)
         {
-            ICryptoTransform transform = ServiceProvider.CreateDecryptor();
-            byte[] enc_bytes = Convert.FromBase64String(cipher_text);
-            byte[] dec_bytes = transform.TransformFinalBlock(enc_bytes, 0, enc_bytes.Length);
-            string str = ASCIIEncoding.ASCII.GetString(dec_bytes);
-            return str;
+            byte[][] result = new byte[2][];
+            Encoding enc = Encoding.UTF8;
+
+            SHA256 sha2 = new SHA256CryptoServiceProvider();
+
+            byte[] rawKey = enc.GetBytes(key);
+            byte[] rawIV = enc.GetBytes(key);
+
+            byte[] hashKey = sha2.ComputeHash(rawKey);
+            byte[] hashIV = sha2.ComputeHash(rawIV);
+
+            Array.Resize(ref hashIV, 16);
+
+            result[0] = hashKey;
+            result[1] = hashIV;
+
+            return result;
         }
 
-
-        //Create AES key based on password
-        private static byte[] CreateKey(string password, int keyBytes = 32)
+        //source: https://msdn.microsoft.com/de-de/library/system.security.cryptography.aes(v=vs.110).aspx
+        private static string EncryptStringToBytes_Aes(string plainText, byte[] Key, byte[] IV)
         {
-            Encoding utf8 = Encoding.UTF8;
+            if (plainText == null || plainText.Length <= 0)
+                throw new ArgumentNullException("plainText");
+            if (Key == null || Key.Length <= 0)
+                throw new ArgumentNullException("Key");
+            if (IV == null || IV.Length <= 0)
+                throw new ArgumentNullException("IV");
 
-            const int Iterations = 300;
-            var keyGenerator = new Rfc2898DeriveBytes(utf8.GetBytes(password), Salt, Iterations);
-            return keyGenerator.GetBytes(keyBytes);
+            byte[] encrypted;
+
+            using (AesManaged aesAlg = new AesManaged())
+            {
+                aesAlg.Key = Key;
+                aesAlg.IV = IV;
+
+                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt =
+                            new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            swEncrypt.Write(plainText);
+                        }
+                        encrypted = msEncrypt.ToArray();
+                    }
+                }
+            }
+            return Convert.ToBase64String(encrypted);
         }
 
-        private static readonly byte[] Salt =
-    new byte[] { 10, 20, 30, 40, 50, 60, 70, 80 };
+        //source: https://msdn.microsoft.com/de-de/library/system.security.cryptography.aes(v=vs.110).aspx
+        private static string DecryptStringFromBytes_Aes(string cipherTextString, byte[] Key, byte[] IV)
+        {
+            byte[] cipherText = Convert.FromBase64String(cipherTextString);
+
+            if (cipherText == null || cipherText.Length <= 0)
+                throw new ArgumentNullException("cipherText");
+            if (Key == null || Key.Length <= 0)
+                throw new ArgumentNullException("Key");
+            if (IV == null || IV.Length <= 0)
+                throw new ArgumentNullException("IV");
+
+            string plaintext = null;
+
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Key;
+                aesAlg.IV = IV;
+
+                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+
+                using (MemoryStream msDecrypt = new MemoryStream(cipherText))
+                {
+                    using (CryptoStream csDecrypt =
+                            new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            plaintext = srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+            }
+            return plaintext;
+        }
+
     }
 }

@@ -1,9 +1,7 @@
 ﻿/*
  * References:
  * https://stackoverflow.com/questions/9201239/send-e-mail-via-smtp-using-c-sharp
- * https://docs.microsoft.com/en-us/dotnet/api/system.net.mail?view=netframework-4.7.2
- * 
- * 
+ * https://docs.microsoft.com/en-us/dotnet/api/system.net.mail?view=netframework-4.7.
  * 
  * */
 using System;
