@@ -34,9 +34,10 @@ namespace mock_up
                 string close = ClosetextBox.Text;
                 string type = typeComboBox.Text;
                 string name = NametextBox.Text;
+                string emailPass = emailPassBox.Text;
                 try
                 {
-                    Business create = new Business(username,pass,email,open,close,type,name);
+                    Business create = new Business(username,pass,email,open,close,type,name,emailPass);
                     MessageBox.Show("Your account has been created!");
                     BusHome start = new BusHome(create);
                     start.Show();

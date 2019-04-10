@@ -51,11 +51,11 @@ namespace mock_up.Classes
         }
 
         //inserts a business into the table
-        public void CreateBus(string username, string pass, string email, int openHour, int closeHour, string busType, string busName)
+        public void CreateBus(string username, string pass, string email, int openHour, int closeHour, string busType, string busName, string emailpass)
         {
             //create a queary and fill it with info
             SqlCommand create = con.CreateCommand();
-            create.CommandText = "INSERT INTO Business VALUES (@username, @pass, @email, @oh, @ch, @type, @name)";
+            create.CommandText = "INSERT INTO Business VALUES (@username, @pass, @email, @oh, @ch, @type, @name, @ep)";
             create.Parameters.AddWithValue("@username", username);
             create.Parameters.AddWithValue("@pass", pass);
             create.Parameters.AddWithValue("@email", email);
@@ -63,7 +63,7 @@ namespace mock_up.Classes
             create.Parameters.AddWithValue("@ch", closeHour);
             create.Parameters.AddWithValue("@type", busType);
             create.Parameters.AddWithValue("@name", busName);
-
+            create.Parameters.AddWithValue("@ep", emailpass);
             //exectue query
             con.Open();
             create.ExecuteNonQuery();

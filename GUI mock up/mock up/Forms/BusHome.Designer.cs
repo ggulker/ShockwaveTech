@@ -39,9 +39,9 @@
             this.ordersTableAdapter1 = new mock_up.UserbaseDataSetTableAdapters.OrdersTableAdapter();
             this.tableAdapterManager1 = new mock_up.UserbaseDataSetTableAdapters.TableAdapterManager();
             this.ordersDataGridView = new System.Windows.Forms.DataGridView();
+            this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notifyBut = new System.Windows.Forms.Button();
             this.removeBut = new System.Windows.Forms.Button();
-            this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userbaseDataSet)).BeginInit();
@@ -121,6 +121,13 @@
             this.ordersDataGridView.Size = new System.Drawing.Size(189, 415);
             this.ordersDataGridView.TabIndex = 2;
             // 
+            // Customer
+            // 
+            this.Customer.DataPropertyName = "Customer";
+            this.Customer.HeaderText = "Customer";
+            this.Customer.Name = "Customer";
+            this.Customer.ReadOnly = true;
+            // 
             // notifyBut
             // 
             this.notifyBut.Location = new System.Drawing.Point(220, 404);
@@ -139,12 +146,7 @@
             this.removeBut.TabIndex = 4;
             this.removeBut.Text = "Remove";
             this.removeBut.UseVisualStyleBackColor = true;
-            // 
-            // Customer
-            // 
-            this.Customer.DataPropertyName = "Customer";
-            this.Customer.HeaderText = "Customer";
-            this.Customer.Name = "Customer";
+            this.removeBut.Click += new System.EventHandler(this.removeBut_Click);
             // 
             // BusHome
             // 
