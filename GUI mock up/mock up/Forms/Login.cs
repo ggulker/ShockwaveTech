@@ -14,6 +14,7 @@ namespace mock_up
 {
     public partial class Login : Form
     {
+        Aes_Encryption aes = new Aes_Encryption();
         //used to see what button they pressed on the choice form
         char type;
         Business business;
@@ -58,7 +59,7 @@ namespace mock_up
             {
                 business = new Business(user);
                 //checking password
-                if (business.PassCheck(passText.Text))
+                if (business.PassCheck(aes.Encrypt(passText.Text, passText.Text)))
                 {
                     return true;
                 }
@@ -68,7 +69,7 @@ namespace mock_up
             else
             {
                 customer = new Customer(user);
-                if (customer.PassCheck(passText.Text))
+                if (customer.PassCheck(aes.Encrypt(passText.Text, passText.Text)))
                 {
                     return true;
                 }

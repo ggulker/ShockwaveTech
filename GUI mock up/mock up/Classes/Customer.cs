@@ -26,7 +26,7 @@ namespace mock_up
             {
                 string OldPassword = p;
                 p = aes.Encrypt(p, OldPassword);
-                u = aes.Encrypt(u, OldPassword);
+                //u = aes.Encrypt(u, OldPassword);
                 e = aes.Encrypt(e, OldPassword);
                 //MessageBox.Show(aes.Encrypt(p,p));
                 //MessageBox.Show(aes.Encrypt(u,p));
