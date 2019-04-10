@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 
 namespace mock_up
 {
-    class Aes_Encryption
+    public class Aes_Encryption
     {
 
         //source:https://www.codeproject.com/Tips/1156169/Encrypt-Strings-with-Passwords-AES-SHA

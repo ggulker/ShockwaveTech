@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/// <summary>
+/// user chooses what account they are creating
+/// </summary>
 namespace mock_up
 {
     public partial class NewChoice : Form

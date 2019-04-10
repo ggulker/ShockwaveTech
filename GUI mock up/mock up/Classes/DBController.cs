@@ -5,20 +5,22 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// controller used for any database calls 
+/// </summary>
 namespace mock_up.Classes
 {
     public class DBController
     {
-        private SqlConnection con = new SqlConnection("Data Source=quickerproject.database.windows.net;Initial Catalog=Userbase;Persist Security Info=True;User ID=user;Password=Mwsu1234");
-        private SqlDataReader userData;
+        private SqlConnection con = new SqlConnection
+            ("Data Source=quickerproject.database.windows.net;Initial Catalog=Userbase;Persist Security Info=True;User ID=user;Password=Mwsu1234");
         public DBController()
         {
 
         }
 
         //used to search all bussiness and get results based on passed query
-        public DataTable SearchBus(string query)
+        public DataTable GetTable(string query)
         {
             SqlDataAdapter adapt;
             DataTable dt;
@@ -33,8 +35,8 @@ namespace mock_up.Classes
             return dt;
         }
 
-        //used to create orders in the queue
-        public void CreateOrder(string customer, string business)
+        //insert into favorites table
+        public void CreateFavorite(string customer, string business)
         {
             //creates query
             SqlCommand cmd = con.CreateCommand();
@@ -68,11 +70,76 @@ namespace mock_up.Classes
             con.Close();
         }
 
+        //inserts a customer into table
+        public void CreateCust(string username, string pass, string email)
+        {
+            //create a queary and fill it with info
+            SqlCommand create = con.CreateCommand();
+            create.CommandText = "INSERT INTO Customer VALUES (@username, @pass, @email)";
+            create.Parameters.AddWithValue("@username", username);
+            create.Parameters.AddWithValue("@pass", pass);
+            create.Parameters.AddWithValue("@email", email);
+
+            //exectue query
+            con.Open();
+            create.ExecuteNonQuery();
+            con.Close();
+        }
+
+        //inserts into orders table
+        public void CreateOrder(string customer, string business)
+        {
+            //creates query
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "INSERT INTO Orders VALUES(@customer, @business)";
+            cmd.Parameters.AddWithValue("@customer", customer);
+            cmd.Parameters.AddWithValue("@business", business);
+
+            //execute query
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        //retrieve the email of a customer
         public string CustEmail(string name)
         {
-            Customer cust = new Customer(name);
-            string e = cust.Email;
+            string e = "";
+            //create query to get email
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "SELECT * FROM Customer WHERE username=@username";
+            //name has large empty spaces
+            name = name.Replace(" ", "");
+            cmd.Parameters.AddWithValue("@username", name);
+
+            //execute query and grab email
+            con.Open();
+            SqlDataReader r = cmd.ExecuteReader();
+            if (r.Read())
+            {
+                e = r["email"].ToString();
+            }
+            r.Close();
+            con.Close();
+
+            //more empty space
+            e = e.Replace(" ", "");
             return e;
         }
+
+        //remove from Orders table
+        public void RemoveOrder(string customer, string business)
+        {
+            SqlCommand remove = con.CreateCommand();
+            remove.CommandText = "DELETE FROM Orders WHERE customer=@customer AND business=@business";
+            remove.Parameters.AddWithValue("@customer", customer);
+            remove.Parameters.AddWithValue("@business", business);
+
+            //exectue query
+            con.Open();
+            remove.ExecuteNonQuery();
+            con.Close();
+        }
+
     }
 }

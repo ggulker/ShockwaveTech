@@ -12,6 +12,9 @@ using System.Timers;
 using Timer = System.Windows.Forms.Timer;
 using mock_up.Classes;
 
+/// <summary>
+/// home space for the Business letting it see their queue and business functions
+/// </summary>
 namespace mock_up
 {
     public partial class BusHome : Form
@@ -36,10 +39,12 @@ namespace mock_up
 
         }
 
+        //on form load uses this to get table
         private void BusHome_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'userbaseDataSet.Orders' table. You can move, or remove it, as needed.
-            this.ordersTableAdapter1.FillBy(this.userbaseDataSet.Orders, username);
+            DataTable dt = dB.GetTable("SELECT * FROM Orders WHERE business='" + username + "'");
+            ordersDataGridView.DataSource = dt;
             SetTimer(sender, e);
         }
 
@@ -50,7 +55,8 @@ namespace mock_up
             restart.Show();
             this.Close();
         }
-
+        
+        //sets timer to refresh every min
         private void SetTimer(object sender, EventArgs e)
         {
             Timer timer = new Timer();
@@ -59,11 +65,14 @@ namespace mock_up
             timer.Start();
         }
 
+        //function called every min
         private void timer_Tick(object sender, EventArgs e)
         {
-            this.ordersTableAdapter1.FillBy(this.userbaseDataSet.Orders, username);
+            DataTable dt = dB.GetTable("SELECT * FROM Orders WHERE business='" + username + "'");
+            ordersDataGridView.DataSource = dt;
         }
 
+        //sends email to customer
         private void notifyBut_Click(object sender, EventArgs e)
         {
             //grabs name from selected row then calls the controller to grab the email

@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/// <summary>
+/// form used for new bussiness to make their account
+/// </summary>
 namespace mock_up
 {
     public partial class BusCreate : Form
@@ -17,6 +19,8 @@ namespace mock_up
             InitializeComponent();
         }
 
+        //once clicked collects all info from textboxes and creates a new business class
+        //then creates a new BusHome form with this business
         private void Registerbutton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(UserIDtextBox.Text) || string.IsNullOrEmpty(PasswordtextBox.Text) || string.IsNullOrEmpty(EmailtextBox.Text))

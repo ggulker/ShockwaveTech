@@ -55,17 +55,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // QueuelistBox
-            // 
+            //
             this.QueuelistBox.FormattingEnabled = true;
             this.QueuelistBox.Location = new System.Drawing.Point(49, 150);
             this.QueuelistBox.Name = "QueuelistBox";
             this.QueuelistBox.Size = new System.Drawing.Size(258, 212);
             this.QueuelistBox.TabIndex = 94;
-            // 
+            //
             // Seatlabel
-            // 
+            //
             this.Seatlabel.AutoSize = true;
             this.Seatlabel.BackColor = System.Drawing.Color.Silver;
             this.Seatlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,9 +75,9 @@
             this.Seatlabel.Size = new System.Drawing.Size(99, 20);
             this.Seatlabel.TabIndex = 93;
             this.Seatlabel.Text = "Seat Types";
-            // 
+            //
             // BiggerTable3checkBox
-            // 
+            //
             this.BiggerTable3checkBox.AutoSize = true;
             this.BiggerTable3checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.BiggerTable3checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,9 +87,9 @@
             this.BiggerTable3checkBox.TabIndex = 92;
             this.BiggerTable3checkBox.Text = "Bigger Table 3";
             this.BiggerTable3checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // BiggerTable2checkBox
-            // 
+            //
             this.BiggerTable2checkBox.AutoSize = true;
             this.BiggerTable2checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.BiggerTable2checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -99,9 +99,9 @@
             this.BiggerTable2checkBox.TabIndex = 91;
             this.BiggerTable2checkBox.Text = "Bigger Table 2";
             this.BiggerTable2checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // BiggerTable1checkBox
-            // 
+            //
             this.BiggerTable1checkBox.AutoSize = true;
             this.BiggerTable1checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.BiggerTable1checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,9 +111,9 @@
             this.BiggerTable1checkBox.TabIndex = 90;
             this.BiggerTable1checkBox.Text = "Bigger Table 1";
             this.BiggerTable1checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // button1
-            // 
+            //
             this.button1.BackColor = System.Drawing.Color.DarkOrange;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(232, 368);
@@ -122,9 +122,9 @@
             this.button1.TabIndex = 89;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
-            // 
+            //
             // Booth4checkBox
-            // 
+            //
             this.Booth4checkBox.AutoSize = true;
             this.Booth4checkBox.BackColor = System.Drawing.Color.PaleVioletRed;
             this.Booth4checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,9 +134,9 @@
             this.Booth4checkBox.TabIndex = 88;
             this.Booth4checkBox.Text = "Booth 4";
             this.Booth4checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // Booth3checkBox
-            // 
+            //
             this.Booth3checkBox.AutoSize = true;
             this.Booth3checkBox.BackColor = System.Drawing.Color.PaleVioletRed;
             this.Booth3checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,9 +146,9 @@
             this.Booth3checkBox.TabIndex = 87;
             this.Booth3checkBox.Text = "Booth 3";
             this.Booth3checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // Booth2checkBox
-            // 
+            //
             this.Booth2checkBox.AutoSize = true;
             this.Booth2checkBox.BackColor = System.Drawing.Color.PaleVioletRed;
             this.Booth2checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,9 +158,9 @@
             this.Booth2checkBox.TabIndex = 86;
             this.Booth2checkBox.Text = "Booth 2";
             this.Booth2checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // Table4checkBox
-            // 
+            //
             this.Table4checkBox.AutoSize = true;
             this.Table4checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.Table4checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,9 +170,9 @@
             this.Table4checkBox.TabIndex = 85;
             this.Table4checkBox.Text = "Table 4";
             this.Table4checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // Table3checkBox
-            // 
+            //
             this.Table3checkBox.AutoSize = true;
             this.Table3checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.Table3checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,9 +182,9 @@
             this.Table3checkBox.TabIndex = 84;
             this.Table3checkBox.Text = "Table 3";
             this.Table3checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // Table2checkBox
-            // 
+            //
             this.Table2checkBox.AutoSize = true;
             this.Table2checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.Table2checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -194,9 +194,9 @@
             this.Table2checkBox.TabIndex = 83;
             this.Table2checkBox.Text = "Table 2";
             this.Table2checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // Bar5checkBox
-            // 
+            //
             this.Bar5checkBox.AutoSize = true;
             this.Bar5checkBox.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.Bar5checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,9 +206,9 @@
             this.Bar5checkBox.TabIndex = 82;
             this.Bar5checkBox.Text = "Bar 5";
             this.Bar5checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // Bar3checkBox
-            // 
+            //
             this.Bar3checkBox.AutoSize = true;
             this.Bar3checkBox.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.Bar3checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,9 +218,9 @@
             this.Bar3checkBox.TabIndex = 80;
             this.Bar3checkBox.Text = "Bar 3";
             this.Bar3checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // Bar2checkBox
-            // 
+            //
             this.Bar2checkBox.AutoSize = true;
             this.Bar2checkBox.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.Bar2checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -230,9 +230,9 @@
             this.Bar2checkBox.TabIndex = 79;
             this.Bar2checkBox.Text = "Bar 2";
             this.Bar2checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // Booth1checkBox
-            // 
+            //
             this.Booth1checkBox.AutoSize = true;
             this.Booth1checkBox.BackColor = System.Drawing.Color.PaleVioletRed;
             this.Booth1checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -242,9 +242,9 @@
             this.Booth1checkBox.TabIndex = 78;
             this.Booth1checkBox.Text = "Booth 1";
             this.Booth1checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // Bar1checkBox
-            // 
+            //
             this.Bar1checkBox.AutoSize = true;
             this.Bar1checkBox.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.Bar1checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -254,9 +254,9 @@
             this.Bar1checkBox.TabIndex = 77;
             this.Bar1checkBox.Text = "Bar 1";
             this.Bar1checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // Table1checkBox
-            // 
+            //
             this.Table1checkBox.AutoSize = true;
             this.Table1checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.Table1checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -266,9 +266,9 @@
             this.Table1checkBox.TabIndex = 76;
             this.Table1checkBox.Text = "Table 1";
             this.Table1checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // Notifybutton
-            // 
+            //
             this.Notifybutton.BackColor = System.Drawing.Color.SpringGreen;
             this.Notifybutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Notifybutton.Location = new System.Drawing.Point(140, 368);
@@ -277,9 +277,9 @@
             this.Notifybutton.TabIndex = 74;
             this.Notifybutton.Text = "Notify";
             this.Notifybutton.UseVisualStyleBackColor = false;
-            // 
+            //
             // Queuelabel
-            // 
+            //
             this.Queuelabel.AutoSize = true;
             this.Queuelabel.BackColor = System.Drawing.Color.Silver;
             this.Queuelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -289,9 +289,9 @@
             this.Queuelabel.Size = new System.Drawing.Size(62, 20);
             this.Queuelabel.TabIndex = 73;
             this.Queuelabel.Text = "Queue";
-            // 
+            //
             // Removebutton
-            // 
+            //
             this.Removebutton.BackColor = System.Drawing.Color.IndianRed;
             this.Removebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Removebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -301,9 +301,9 @@
             this.Removebutton.TabIndex = 72;
             this.Removebutton.Text = "Remove";
             this.Removebutton.UseVisualStyleBackColor = false;
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(359, 13);
@@ -311,17 +311,17 @@
             this.label1.Size = new System.Drawing.Size(132, 36);
             this.label1.TabIndex = 2;
             this.label1.Text = "Restuarant";
-            // 
+            //
             // panel2
-            // 
+            //
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(72, 37);
             this.panel2.TabIndex = 1;
-            // 
+            //
             // Bar4checkBox
-            // 
+            //
             this.Bar4checkBox.AutoSize = true;
             this.Bar4checkBox.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.Bar4checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -331,9 +331,9 @@
             this.Bar4checkBox.TabIndex = 81;
             this.Bar4checkBox.Text = "Bar 4";
             this.Bar4checkBox.UseVisualStyleBackColor = false;
-            // 
+            //
             // panel1
-            // 
+            //
             this.panel1.BackColor = System.Drawing.Color.Red;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
@@ -342,9 +342,9 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 60);
             this.panel1.TabIndex = 75;
-            // 
+            //
             // RestuarantForm
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;

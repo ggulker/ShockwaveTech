@@ -5,18 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/// <summary>
+/// a customer user creates this class and uses it throughout the program
+/// </summary>
 namespace mock_up
 {
     class Customer : User
     {
-        Aes_Encryption aes = new Aes_Encryption();
-        public Customer(string u) : base(u)
+        public Customer(string u, string p) : base(u,p)
         {
 
         }
 
-        public Customer(string u, string p, string e):base(u)
+        //called when making a new customer
+        public Customer(string u, string p, string e):base(u,p)
         {
             //sense we use the username to download info in our base constructor
             //if there is any info that means the account already exists
@@ -24,10 +26,9 @@ namespace mock_up
                 throw new System.InvalidOperationException("An account already exists with this username");
             else
             {
-                string OldPassword = p;
-                p = aes.Encrypt(p, OldPassword);
+                //p = aes.Encrypt(p, OldPassword);
                 //u = aes.Encrypt(u, OldPassword);
-                e = aes.Encrypt(e, OldPassword);
+                //e = aes.Encrypt(e, OldPassword);
                 //MessageBox.Show(aes.Encrypt(p,p));
                 //MessageBox.Show(aes.Encrypt(u,p));
                 //MessageBox.Show(aes.Encrypt(e,p));
@@ -54,22 +55,16 @@ namespace mock_up
             pass = userData["pass"].ToString();
             email = userData["email"].ToString();
             username = username.Replace(" ", "");
+            //username = aes.Decrypt(username);
             pass = pass.Replace(" ", "");
+           //pass = aes.Decrypt(pass);
             email = email.Replace(" ", "");
+            //email = aes.Decrypt(email);
         }
 
         protected override void Create()
         {
-
-            SqlCommand create = con.CreateCommand();
-            create.CommandText = "INSERT INTO Customer VALUES (";
-            string u = "'" + username + "', ";
-            string p = "'" + pass + "', ";
-            string e = "'" + email + "')";
-            create.CommandText += u + p + e;
-            con.Open();
-            create.ExecuteNonQuery();
-            con.Close();
+            dB.CreateCust(username, pass, email);
         }
     }
 }
