@@ -10,7 +10,7 @@ using System.Windows.Forms;
 /// </summary>
 namespace mock_up
 {
-    class Customer : User
+    public class Customer : User
     {
         public Customer(string u, string p) : base(u,p)
         {

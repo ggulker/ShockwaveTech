@@ -42,6 +42,7 @@
             this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notifyBut = new System.Windows.Forms.Button();
             this.removeBut = new System.Windows.Forms.Button();
+            this.accountBut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userbaseDataSet)).BeginInit();
@@ -148,12 +149,24 @@
             this.removeBut.UseVisualStyleBackColor = true;
             this.removeBut.Click += new System.EventHandler(this.removeBut_Click);
             // 
+            // accountBut
+            // 
+            this.accountBut.Location = new System.Drawing.Point(220, 346);
+            this.accountBut.Name = "accountBut";
+            this.accountBut.Size = new System.Drawing.Size(75, 23);
+            this.accountBut.TabIndex = 5;
+            this.accountBut.TabStop = false;
+            this.accountBut.Text = "account";
+            this.accountBut.UseVisualStyleBackColor = true;
+            this.accountBut.Click += new System.EventHandler(this.accountBut_Click);
+            // 
             // BusHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(804, 452);
+            this.Controls.Add(this.accountBut);
             this.Controls.Add(this.removeBut);
             this.Controls.Add(this.notifyBut);
             this.Controls.Add(this.ordersDataGridView);
@@ -185,5 +198,6 @@
         private System.Windows.Forms.Button notifyBut;
         private System.Windows.Forms.Button removeBut;
         private System.Windows.Forms.DataGridViewTextBoxColumn Customer;
+        private System.Windows.Forms.Button accountBut;
     }
 }

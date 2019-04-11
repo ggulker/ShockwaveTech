@@ -20,10 +20,11 @@ namespace mock_up
         string username;
         private SqlConnection con = new SqlConnection("Data Source=quickerproject.database.windows.net;Initial Catalog=Userbase;Persist Security Info=True;User ID=user;Password=Mwsu1234");
         DBController dB = new DBController();
-
-        public Search(string u)
+        private Customer user;
+        public Search(Customer u)
         {
-            username = u;
+            username = u.Username;
+            user = u;
             InitializeComponent();
         }
 
@@ -128,6 +129,12 @@ namespace mock_up
             {
                 MessageBox.Show("Please select a business to check on");
             }
+        }
+
+        private void accountBut_Click(object sender, EventArgs e)
+        {
+            CustumerPageForm change = new CustumerPageForm(user);
+            change.Show();
         }
     }
 }
