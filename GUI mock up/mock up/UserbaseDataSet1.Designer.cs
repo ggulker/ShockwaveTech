@@ -426,6 +426,8 @@ namespace mock_up {
             
             private global::System.Data.DataColumn columnBusName;
             
+            private global::System.Data.DataColumn columnemailPass;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public BusinessDataTable() {
@@ -517,6 +519,14 @@ namespace mock_up {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn emailPassColumn {
+                get {
+                    return this.columnemailPass;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -552,7 +562,7 @@ namespace mock_up {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BusinessRow AddBusinessRow(string username, string pass, string email, int openHour, int closeHour, string BusType, string BusName) {
+            public BusinessRow AddBusinessRow(string username, string pass, string email, int openHour, int closeHour, string BusType, string BusName, string emailPass) {
                 BusinessRow rowBusinessRow = ((BusinessRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         username,
@@ -561,7 +571,8 @@ namespace mock_up {
                         openHour,
                         closeHour,
                         BusType,
-                        BusName};
+                        BusName,
+                        emailPass};
                 rowBusinessRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBusinessRow);
                 return rowBusinessRow;
@@ -598,6 +609,7 @@ namespace mock_up {
                 this.columncloseHour = base.Columns["closeHour"];
                 this.columnBusType = base.Columns["BusType"];
                 this.columnBusName = base.Columns["BusName"];
+                this.columnemailPass = base.Columns["emailPass"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -617,6 +629,8 @@ namespace mock_up {
                 base.Columns.Add(this.columnBusType);
                 this.columnBusName = new global::System.Data.DataColumn("BusName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBusName);
+                this.columnemailPass = new global::System.Data.DataColumn("emailPass", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemailPass);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnusername}, true));
                 this.columnusername.AllowDBNull = false;
@@ -632,6 +646,7 @@ namespace mock_up {
                 this.columnBusType.MaxLength = 15;
                 this.columnBusName.AllowDBNull = false;
                 this.columnBusName.MaxLength = 20;
+                this.columnemailPass.MaxLength = 60;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1709,6 +1724,34 @@ namespace mock_up {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string emailPass {
+                get {
+                    try {
+                        return ((string)(this[this.tableBusiness.emailPassColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'emailPass\' in table \'Business\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBusiness.emailPassColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsemailPassNull() {
+                return this.IsNull(this.tableBusiness.emailPassColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetemailPassNull() {
+                this[this.tableBusiness.emailPassColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public OrdersRow[] GetOrdersRows() {
                 if ((this.Table.ChildRelations["FK__Orders__Business__4E88ABD4"] == null)) {
                     return new OrdersRow[0];
@@ -2265,22 +2308,27 @@ namespace mock_up.UserbaseDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("closeHour", "closeHour");
             tableMapping.ColumnMappings.Add("BusType", "BusType");
             tableMapping.ColumnMappings.Add("BusName", "BusName");
+            tableMapping.ColumnMappings.Add("emailPass", "emailPass");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Business] WHERE (([username] = @Original_username) AND ([pass] = @Original_pass) AND ([email] = @Original_email) AND ([openHour] = @Original_openHour) AND ([closeHour] = @Original_closeHour) AND ([BusType] = @Original_BusType) AND ([BusName] = @Original_BusName))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Business] WHERE (([username] = @Original_username) AND ((@IsNull_pass = 1 AND [pass] IS NULL) OR ([pass] = @Original_pass)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ([openHour] = @Original_openHour) AND ([closeHour] = @Original_closeHour) AND ([BusType] = @Original_BusType) AND ([BusName] = @Original_BusName) AND ((@IsNull_emailPass = 1 AND [emailPass] IS NULL) OR ([emailPass] = @Original_emailPass)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pass", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pass", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_email", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_openHour", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "openHour", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_closeHour", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "closeHour", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BusType", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BusType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BusName", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BusName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_emailPass", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emailPass", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_emailPass", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emailPass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Business] ([username], [pass], [email], [openHour], [closeHour], [BusType], [BusName]) VALUES (@username, @pass, @email, @openHour, @closeHour, @BusType, @BusName);
-SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Business WHERE (username = @username)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Business] ([username], [pass], [email], [openHour], [closeHour], [BusType], [BusName], [emailPass]) VALUES (@username, @pass, @email, @openHour, @closeHour, @BusType, @BusName, @emailPass);
+SELECT username, pass, email, openHour, closeHour, BusType, BusName, emailPass FROM Business WHERE (username = @username)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2289,10 +2337,11 @@ SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Busines
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@closeHour", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "closeHour", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BusType", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BusType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BusName", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BusName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emailPass", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emailPass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Business] SET [username] = @username, [pass] = @pass, [email] = @email, [openHour] = @openHour, [closeHour] = @closeHour, [BusType] = @BusType, [BusName] = @BusName WHERE (([username] = @Original_username) AND ([pass] = @Original_pass) AND ([email] = @Original_email) AND ([openHour] = @Original_openHour) AND ([closeHour] = @Original_closeHour) AND ([BusType] = @Original_BusType) AND ([BusName] = @Original_BusName));
-SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Business WHERE (username = @username)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Business] SET [username] = @username, [pass] = @pass, [email] = @email, [openHour] = @openHour, [closeHour] = @closeHour, [BusType] = @BusType, [BusName] = @BusName, [emailPass] = @emailPass WHERE (([username] = @Original_username) AND ((@IsNull_pass = 1 AND [pass] IS NULL) OR ([pass] = @Original_pass)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ([openHour] = @Original_openHour) AND ([closeHour] = @Original_closeHour) AND ([BusType] = @Original_BusType) AND ([BusName] = @Original_BusName) AND ((@IsNull_emailPass = 1 AND [emailPass] IS NULL) OR ([emailPass] = @Original_emailPass)));
+SELECT username, pass, email, openHour, closeHour, BusType, BusName, emailPass FROM Business WHERE (username = @username)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2301,13 +2350,18 @@ SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Busines
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@closeHour", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "closeHour", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BusType", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BusType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BusName", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BusName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emailPass", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emailPass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pass", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pass", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_email", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_openHour", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "openHour", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_closeHour", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "closeHour", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BusType", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BusType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BusName", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BusName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_emailPass", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emailPass", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_emailPass", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emailPass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2323,8 +2377,8 @@ SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Busines
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM dbo.Busi" +
-                "ness";
+            this._commandCollection[0].CommandText = "SELECT username, pass, email, openHour, closeHour, BusType, BusName, emailPass FR" +
+                "OM Business";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2385,7 +2439,7 @@ SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Busines
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_username, string Original_pass, string Original_email, int Original_openHour, int Original_closeHour, string Original_BusType, string Original_BusName) {
+        public virtual int Delete(string Original_username, string Original_pass, string Original_email, int Original_openHour, int Original_closeHour, string Original_BusType, string Original_BusName, string Original_emailPass) {
             if ((Original_username == null)) {
                 throw new global::System.ArgumentNullException("Original_username");
             }
@@ -2393,30 +2447,42 @@ SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Busines
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_username));
             }
             if ((Original_pass == null)) {
-                throw new global::System.ArgumentNullException("Original_pass");
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_pass));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_pass));
             }
             if ((Original_email == null)) {
-                throw new global::System.ArgumentNullException("Original_email");
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_email));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_email));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_openHour));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_closeHour));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_openHour));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_closeHour));
             if ((Original_BusType == null)) {
                 throw new global::System.ArgumentNullException("Original_BusType");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_BusType));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_BusType));
             }
             if ((Original_BusName == null)) {
                 throw new global::System.ArgumentNullException("Original_BusName");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_BusName));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_BusName));
+            }
+            if ((Original_emailPass == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_emailPass));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2438,7 +2504,7 @@ SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Busines
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string username, string pass, string email, int openHour, int closeHour, string BusType, string BusName) {
+        public virtual int Insert(string username, string pass, string email, int openHour, int closeHour, string BusType, string BusName, string emailPass) {
             if ((username == null)) {
                 throw new global::System.ArgumentNullException("username");
             }
@@ -2446,13 +2512,13 @@ SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Busines
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(username));
             }
             if ((pass == null)) {
-                throw new global::System.ArgumentNullException("pass");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(pass));
             }
             if ((email == null)) {
-                throw new global::System.ArgumentNullException("email");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(email));
@@ -2470,6 +2536,12 @@ SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Busines
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(BusName));
+            }
+            if ((emailPass == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(emailPass));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2491,7 +2563,23 @@ SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Busines
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string username, string pass, string email, int openHour, int closeHour, string BusType, string BusName, string Original_username, string Original_pass, string Original_email, int Original_openHour, int Original_closeHour, string Original_BusType, string Original_BusName) {
+        public virtual int Update(
+                    string username, 
+                    string pass, 
+                    string email, 
+                    int openHour, 
+                    int closeHour, 
+                    string BusType, 
+                    string BusName, 
+                    string emailPass, 
+                    string Original_username, 
+                    string Original_pass, 
+                    string Original_email, 
+                    int Original_openHour, 
+                    int Original_closeHour, 
+                    string Original_BusType, 
+                    string Original_BusName, 
+                    string Original_emailPass) {
             if ((username == null)) {
                 throw new global::System.ArgumentNullException("username");
             }
@@ -2499,13 +2587,13 @@ SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Busines
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(username));
             }
             if ((pass == null)) {
-                throw new global::System.ArgumentNullException("pass");
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(pass));
             }
             if ((email == null)) {
-                throw new global::System.ArgumentNullException("email");
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(email));
@@ -2524,37 +2612,55 @@ SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Busines
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(BusName));
             }
+            if ((emailPass == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(emailPass));
+            }
             if ((Original_username == null)) {
                 throw new global::System.ArgumentNullException("Original_username");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_username));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_username));
             }
             if ((Original_pass == null)) {
-                throw new global::System.ArgumentNullException("Original_pass");
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_pass));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_pass));
             }
             if ((Original_email == null)) {
-                throw new global::System.ArgumentNullException("Original_email");
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_email));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_email));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_openHour));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_closeHour));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_openHour));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_closeHour));
             if ((Original_BusType == null)) {
                 throw new global::System.ArgumentNullException("Original_BusType");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_BusType));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_BusType));
             }
             if ((Original_BusName == null)) {
                 throw new global::System.ArgumentNullException("Original_BusName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_BusName));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_BusName));
+            }
+            if ((Original_emailPass == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_emailPass));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2576,8 +2682,8 @@ SELECT username, pass, email, openHour, closeHour, BusType, BusName FROM Busines
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string pass, string email, int openHour, int closeHour, string BusType, string BusName, string Original_username, string Original_pass, string Original_email, int Original_openHour, int Original_closeHour, string Original_BusType, string Original_BusName) {
-            return this.Update(Original_username, pass, email, openHour, closeHour, BusType, BusName, Original_username, Original_pass, Original_email, Original_openHour, Original_closeHour, Original_BusType, Original_BusName);
+        public virtual int Update(string pass, string email, int openHour, int closeHour, string BusType, string BusName, string emailPass, string Original_username, string Original_pass, string Original_email, int Original_openHour, int Original_closeHour, string Original_BusType, string Original_BusName, string Original_emailPass) {
+            return this.Update(Original_username, pass, email, openHour, closeHour, BusType, BusName, emailPass, Original_username, Original_pass, Original_email, Original_openHour, Original_closeHour, Original_BusType, Original_BusName, Original_emailPass);
         }
     }
     

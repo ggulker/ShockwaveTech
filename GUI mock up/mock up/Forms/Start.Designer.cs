@@ -84,7 +84,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Start";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Start_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -30,9 +30,6 @@
         {   
             this.components = new System.ComponentModel.Container();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quicker_QueueDataSet = new mock_up.Quicker_QueueDataSet();
-            this.ordersTableAdapter = new mock_up.Quicker_QueueDataSetTableAdapters.OrdersTableAdapter();
-            this.tableAdapterManager = new mock_up.Quicker_QueueDataSetTableAdapters.TableAdapterManager();
             this.logOutBut = new System.Windows.Forms.Button();
             this.userbaseDataSet = new mock_up.UserbaseDataSet();
             this.ordersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -44,33 +41,10 @@
             this.removeBut = new System.Windows.Forms.Button();
             this.accountBut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userbaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.quicker_QueueDataSet;
-            // 
-            // quicker_QueueDataSet
-            // 
-            this.quicker_QueueDataSet.DataSetName = "Quicker_QueueDataSet";
-            this.quicker_QueueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ordersTableAdapter
-            // 
-            this.ordersTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BusinessTableAdapter = null;
-            this.tableAdapterManager.CustomerTableAdapter = null;
-            this.tableAdapterManager.OrdersTableAdapter = this.ordersTableAdapter;
-            this.tableAdapterManager.UpdateOrder = mock_up.Quicker_QueueDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // logOutBut
             // 
@@ -156,7 +130,7 @@
             this.accountBut.Size = new System.Drawing.Size(75, 23);
             this.accountBut.TabIndex = 5;
             this.accountBut.TabStop = false;
-            this.accountBut.Text = "account";
+            this.accountBut.Text = "Account";
             this.accountBut.UseVisualStyleBackColor = true;
             this.accountBut.Click += new System.EventHandler(this.accountBut_Click);
             // 
@@ -175,19 +149,16 @@
             this.Text = "Business Home";
             this.Load += new System.EventHandler(this.BusHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userbaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
 
-        private Quicker_QueueDataSet quicker_QueueDataSet;
         private System.Windows.Forms.BindingSource ordersBindingSource;
-        private Quicker_QueueDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
-        private Quicker_QueueDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button logOutBut;
         private UserbaseDataSet userbaseDataSet;
         private System.Windows.Forms.BindingSource ordersBindingSource1;
