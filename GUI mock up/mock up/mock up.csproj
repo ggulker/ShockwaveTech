@@ -68,6 +68,12 @@
     <Compile Include="Forms\CheckQueue.Designer.cs">
       <DependentUpon>CheckQueue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CustumerPageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustumerPageForm.Designer.cs">
+      <DependentUpon>CustumerPageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewChoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,12 @@
     </Compile>
     <Compile Include="Forms\Finalize.Designer.cs">
       <DependentUpon>Finalize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RestuarantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RestuarantForm.Designer.cs">
+      <DependentUpon>RestuarantForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Search.cs">
       <SubType>Form</SubType>
@@ -131,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CheckQueue.resx">
       <DependentUpon>CheckQueue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustumerPageForm.resx">
+      <DependentUpon>CustumerPageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewChoice.resx">
       <DependentUpon>NewChoice.cs</DependentUpon>

@@ -141,5 +141,28 @@ namespace mock_up.Classes
             con.Close();
         }
 
+        //removes any customer account by username
+        public void RemoveCustAccount(string user)
+        {
+            SqlCommand remove = con.CreateCommand();
+            remove.CommandText = "DELETE FROM Customer WHERE username = @username";
+            remove.Parameters.AddWithValue("@username", user);
+            con.Open();
+            remove.ExecuteNonQuery();
+            con.Close();
+        }
+
+        //changes a customer account by deleting then reinserting with new info
+        public void ChangeCustAccount(string oUsername, string username, string email)
+        {
+            SqlCommand remove = con.CreateCommand();
+            remove.CommandText = "UPDATE Customer SET username = @newu, email = @newe WHERE username = @username";
+            remove.Parameters.AddWithValue("@username", oUsername);
+            remove.Parameters.AddWithValue("@newu", username);
+            remove.Parameters.AddWithValue("@newe", email);
+            con.Open();
+            remove.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

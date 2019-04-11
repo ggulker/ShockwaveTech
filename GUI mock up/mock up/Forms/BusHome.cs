@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Timers;
 using Timer = System.Windows.Forms.Timer;
 using mock_up.Classes;
+using mock_up.Forms;
 
 /// <summary>
 /// home space for the Business letting it see their queue and business functions
@@ -83,6 +84,11 @@ namespace mock_up
         private void removeBut_Click(object sender, EventArgs e)
         {
             dB.RemoveOrder(ordersDataGridView.SelectedRows[0].Cells["Customer"].Value.ToString(), username);
+            timer_Tick(sender, e);
+        }
+
+        private void accountBut_Click(object sender, EventArgs e)
+        {
         }
     }
 }
