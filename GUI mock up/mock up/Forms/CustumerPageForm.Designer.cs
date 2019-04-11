@@ -38,13 +38,14 @@
             this.EmailtextBox = new System.Windows.Forms.TextBox();
             this.Emaillabel = new System.Windows.Forms.Label();
             this.confirmBut = new System.Windows.Forms.Button();
+            this.deleteBut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Editbutton
             // 
             this.Editbutton.BackColor = System.Drawing.Color.Lavender;
             this.Editbutton.Location = new System.Drawing.Point(115, 283);
-            this.Editbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Editbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Editbutton.Name = "Editbutton";
             this.Editbutton.Size = new System.Drawing.Size(100, 28);
             this.Editbutton.TabIndex = 81;
@@ -56,7 +57,7 @@
             // 
             this.Cancelbutton.BackColor = System.Drawing.Color.DimGray;
             this.Cancelbutton.Location = new System.Drawing.Point(234, 283);
-            this.Cancelbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Cancelbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelbutton.Name = "Cancelbutton";
             this.Cancelbutton.Size = new System.Drawing.Size(100, 28);
             this.Cancelbutton.TabIndex = 79;
@@ -68,7 +69,7 @@
             // 
             this.ChangePasswordbutton.BackColor = System.Drawing.Color.SpringGreen;
             this.ChangePasswordbutton.Location = new System.Drawing.Point(149, 234);
-            this.ChangePasswordbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChangePasswordbutton.Margin = new System.Windows.Forms.Padding(4);
             this.ChangePasswordbutton.Name = "ChangePasswordbutton";
             this.ChangePasswordbutton.Size = new System.Drawing.Size(135, 28);
             this.ChangePasswordbutton.TabIndex = 78;
@@ -93,7 +94,7 @@
             this.panel1.BackColor = System.Drawing.Color.Red;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(457, 74);
             this.panel1.TabIndex = 77;
@@ -112,7 +113,7 @@
             // 
             this.UserIDtextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.UserIDtextBox.Location = new System.Drawing.Point(115, 135);
-            this.UserIDtextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserIDtextBox.Margin = new System.Windows.Forms.Padding(4);
             this.UserIDtextBox.Name = "UserIDtextBox";
             this.UserIDtextBox.ReadOnly = true;
             this.UserIDtextBox.Size = new System.Drawing.Size(219, 22);
@@ -122,7 +123,7 @@
             // 
             this.EmailtextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.EmailtextBox.Location = new System.Drawing.Point(115, 188);
-            this.EmailtextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmailtextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.ReadOnly = true;
             this.EmailtextBox.Size = new System.Drawing.Size(219, 22);
@@ -151,12 +152,24 @@
             this.confirmBut.Visible = false;
             this.confirmBut.Click += new System.EventHandler(this.confirmBut_Click);
             // 
+            // deleteBut
+            // 
+            this.deleteBut.BackColor = System.Drawing.Color.Red;
+            this.deleteBut.Location = new System.Drawing.Point(115, 327);
+            this.deleteBut.Name = "deleteBut";
+            this.deleteBut.Size = new System.Drawing.Size(219, 34);
+            this.deleteBut.TabIndex = 83;
+            this.deleteBut.Text = "Delete Account";
+            this.deleteBut.UseVisualStyleBackColor = false;
+            this.deleteBut.Click += new System.EventHandler(this.deleteBut_Click);
+            // 
             // CustumerPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(457, 373);
+            this.Controls.Add(this.deleteBut);
             this.Controls.Add(this.confirmBut);
             this.Controls.Add(this.Editbutton);
             this.Controls.Add(this.Cancelbutton);
@@ -167,7 +180,7 @@
             this.Controls.Add(this.UserIDtextBox);
             this.Controls.Add(this.EmailtextBox);
             this.Controls.Add(this.Emaillabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CustumerPageForm";
             this.Text = "CustumerPageForm";
             this.ResumeLayout(false);
@@ -186,5 +199,6 @@
         private System.Windows.Forms.TextBox EmailtextBox;
         private System.Windows.Forms.Label Emaillabel;
         private System.Windows.Forms.Button confirmBut;
+        private System.Windows.Forms.Button deleteBut;
     }
 }

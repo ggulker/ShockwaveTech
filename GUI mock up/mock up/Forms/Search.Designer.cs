@@ -41,9 +41,6 @@
             this.Queuebut = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.businessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quicker_QueueDataSet = new mock_up.Quicker_QueueDataSet();
-            this.businessTableAdapter = new mock_up.Quicker_QueueDataSetTableAdapters.BusinessTableAdapter();
-            this.tableAdapterManager = new mock_up.Quicker_QueueDataSetTableAdapters.TableAdapterManager();
             this.userbaseDataSet = new mock_up.UserbaseDataSet();
             this.businessBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.businessTableAdapter1 = new mock_up.UserbaseDataSetTableAdapters.BusinessTableAdapter();
@@ -61,7 +58,6 @@
             this.accountBut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userbaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessDataGridView)).BeginInit();
@@ -195,28 +191,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(727, 74);
             this.panel1.TabIndex = 12;
-            // 
-            // businessBindingSource
-            // 
-            this.businessBindingSource.DataMember = "Business";
-            this.businessBindingSource.DataSource = this.quicker_QueueDataSet;
-            // 
-            // quicker_QueueDataSet
-            // 
-            this.quicker_QueueDataSet.DataSetName = "Quicker_QueueDataSet";
-            this.quicker_QueueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // businessTableAdapter
-            // 
-            this.businessTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BusinessTableAdapter = this.businessTableAdapter;
-            this.tableAdapterManager.CustomerTableAdapter = null;
-            this.tableAdapterManager.OrdersTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = mock_up.Quicker_QueueDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // userbaseDataSet
             // 
@@ -366,7 +340,6 @@
             this.Load += new System.EventHandler(this.Search_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userbaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessDataGridView)).EndInit();
@@ -388,10 +361,7 @@
         private System.Windows.Forms.TextBox ClosetextBox;
         private System.Windows.Forms.Button Queuebut;
         private System.Windows.Forms.Panel panel1;
-        private Quicker_QueueDataSet quicker_QueueDataSet;
         private System.Windows.Forms.BindingSource businessBindingSource;
-        private Quicker_QueueDataSetTableAdapters.BusinessTableAdapter businessTableAdapter;
-        private Quicker_QueueDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private UserbaseDataSet userbaseDataSet;
         private System.Windows.Forms.BindingSource businessBindingSource1;
         private UserbaseDataSetTableAdapters.BusinessTableAdapter businessTableAdapter1;

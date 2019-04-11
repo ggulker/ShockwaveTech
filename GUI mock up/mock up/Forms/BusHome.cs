@@ -23,12 +23,14 @@ namespace mock_up
         //need the business name to get orders
         string username;
         string email;
+        Business user;
         DBController dB = new DBController();
 
         public BusHome(Business n)
         {
             username = n.Username;
             email = n.Email;
+            user = n;
             InitializeComponent();
         }
 
@@ -89,6 +91,8 @@ namespace mock_up
 
         private void accountBut_Click(object sender, EventArgs e)
         {
+            BusinessPageForm change = new BusinessPageForm(user);
+            change.Show();
         }
     }
 }

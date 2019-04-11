@@ -50,5 +50,23 @@ namespace mock_up.Forms
         {
             this.Close();
         }
+
+        private void deleteBut_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you want to delete your account?";
+            string title = "Close Window";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                dB.RemoveCustAccount(user.Username);
+                this.Close();
+                System.Environment.Exit(1);
+            }
+            else
+            {
+                // Do something  
+            }
+        }
     }
 }

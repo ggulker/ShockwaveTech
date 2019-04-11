@@ -54,13 +54,39 @@ namespace mock_up
             }
         }
 
-        public string EmailPass
+        //all getters for business info
+        public string Name
         {
             get
             {
-                return emailPass;
+                return busName;
             }
         }
+
+        public string Type
+        {
+            get
+            {
+                return busType;
+            }
+        }
+
+        public int Open
+        {
+            get
+            {
+                return openHour;
+            }
+        }
+
+        public int close
+        {
+            get
+            {
+                return closeHour;
+            }
+        }
+
         //creates user specific queary for our search
         protected override string GetQueary()
         {
@@ -79,6 +105,7 @@ namespace mock_up
             busType = userData["BusType"].ToString();
             openHour = Convert.ToInt16(userData["openHour"].ToString());
             closeHour = Convert.ToInt16(userData["closeHour"].ToString());
+            emailPass = userData["emailPass"].ToString();
             //DECRYPT ALL THINGS HERE
             //all strings returned have alot of empty spaces removing those
             username = username.Replace(" ", "");
@@ -86,6 +113,7 @@ namespace mock_up
             email = Email.Replace(" ", "");
             busName = busName.Replace(" ", "");
             busType = busType.Replace(" ", "");
+            emailPass = emailPass.Replace(" ", "");
         }
 
         //creates business in database by calling on the controller

@@ -152,7 +152,18 @@ namespace mock_up.Classes
             con.Close();
         }
 
-        //changes a customer account by deleting then reinserting with new info
+        //removes any business account by username
+        public void RemoveBusAccount(string user)
+        {
+            SqlCommand remove = con.CreateCommand();
+            remove.CommandText = "DELETE FROM Business WHERE username = @username";
+            remove.Parameters.AddWithValue("@username", user);
+            con.Open();
+            remove.ExecuteNonQuery();
+            con.Close();
+        }
+
+        //changes a customer account info with an update sql
         public void ChangeCustAccount(string oUsername, string username, string email)
         {
             SqlCommand remove = con.CreateCommand();
@@ -160,6 +171,23 @@ namespace mock_up.Classes
             remove.Parameters.AddWithValue("@username", oUsername);
             remove.Parameters.AddWithValue("@newu", username);
             remove.Parameters.AddWithValue("@newe", email);
+            con.Open();
+            remove.ExecuteNonQuery();
+            con.Close();
+        }
+
+        //changes a business account info with an update sql
+        public void ChangeBusAccount(string oUsername, string username, string email, string openH, string closeH, string busName, string busType)
+        {
+            SqlCommand remove = con.CreateCommand();
+            remove.CommandText = "UPDATE Business SET username = @newu, email = @newe, openHour = @openH, closeHour = @closeH, BusType = @type, BusName = @name WHERE username = @username";
+            remove.Parameters.AddWithValue("@username", oUsername);
+            remove.Parameters.AddWithValue("@newu", username);
+            remove.Parameters.AddWithValue("@newe", email);
+            remove.Parameters.AddWithValue("@openH",Convert.ToInt16(openH));
+            remove.Parameters.AddWithValue("@closeH", Convert.ToInt16(closeH));
+            remove.Parameters.AddWithValue("@name", busName);
+            remove.Parameters.AddWithValue("@type", busType);
             con.Open();
             remove.ExecuteNonQuery();
             con.Close();
