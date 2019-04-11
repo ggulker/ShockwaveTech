@@ -34,33 +34,37 @@
             // 
             // QueueBut
             // 
-            this.QueueBut.Location = new System.Drawing.Point(86, 77);
+            this.QueueBut.BackColor = System.Drawing.Color.Lime;
+            this.QueueBut.Location = new System.Drawing.Point(64, 63);
+            this.QueueBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.QueueBut.Name = "QueueBut";
-            this.QueueBut.Size = new System.Drawing.Size(107, 36);
+            this.QueueBut.Size = new System.Drawing.Size(80, 29);
             this.QueueBut.TabIndex = 0;
             this.QueueBut.Text = "Queue";
-            this.QueueBut.UseVisualStyleBackColor = true;
+            this.QueueBut.UseVisualStyleBackColor = false;
             this.QueueBut.Click += new System.EventHandler(this.QueueBut_Click);
             // 
             // CloseBut
             // 
-            this.CloseBut.Location = new System.Drawing.Point(86, 136);
+            this.CloseBut.Location = new System.Drawing.Point(64, 110);
+            this.CloseBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CloseBut.Name = "CloseBut";
-            this.CloseBut.Size = new System.Drawing.Size(107, 36);
+            this.CloseBut.Size = new System.Drawing.Size(80, 29);
             this.CloseBut.TabIndex = 1;
             this.CloseBut.Text = "Close";
             this.CloseBut.UseVisualStyleBackColor = true;
             this.CloseBut.Click += new System.EventHandler(this.CloseBut_Click);
             // 
-            // Queue
+            // Finalize
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(212, 206);
             this.Controls.Add(this.CloseBut);
             this.Controls.Add(this.QueueBut);
-            this.Name = "Queue";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "Finalize";
             this.Text = "Queue";
             this.ResumeLayout(false);
 

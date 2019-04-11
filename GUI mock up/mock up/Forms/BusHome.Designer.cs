@@ -27,7 +27,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        {
+        {   
             this.components = new System.ComponentModel.Container();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quicker_QueueDataSet = new mock_up.Quicker_QueueDataSet();
@@ -180,7 +180,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
