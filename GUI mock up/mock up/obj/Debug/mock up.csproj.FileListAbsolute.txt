@@ -36,3 +36,4 @@ C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.cs
 C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.csproj.CoreCompileInputs.cache
 C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.exe
 C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.pdb
+C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Forms.CustumerPageForm.resources

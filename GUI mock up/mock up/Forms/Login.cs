@@ -43,7 +43,7 @@ namespace mock_up
                 }
                 else
                 {
-                    Search search = new Search(usernameText.Text);
+                    Search search = new Search(customer);
                     search.Show();
                     this.Close();
                 }

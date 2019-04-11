@@ -40,7 +40,6 @@
             this.ClosetextBox = new System.Windows.Forms.TextBox();
             this.Queuebut = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.businessBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quicker_QueueDataSet = new mock_up.Quicker_QueueDataSet();
             this.businessTableAdapter = new mock_up.Quicker_QueueDataSetTableAdapters.BusinessTableAdapter();
@@ -58,6 +57,8 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logOutBut = new System.Windows.Forms.Button();
+            this.accountBut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quicker_QueueDataSet)).BeginInit();
@@ -186,22 +187,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.accountBut);
+            this.panel1.Controls.Add(this.logOutBut);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(727, 74);
             this.panel1.TabIndex = 12;
-            // 
-            // panel2
-            // 
-            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(16, 15);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(96, 46);
-            this.panel2.TabIndex = 1;
             // 
             // businessBindingSource
             // 
@@ -270,6 +263,8 @@
             // 
             // businessDataGridView
             // 
+            this.businessDataGridView.AllowUserToAddRows = false;
+            this.businessDataGridView.AllowUserToDeleteRows = false;
             this.businessDataGridView.AutoGenerateColumns = false;
             this.businessDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.businessDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -282,7 +277,9 @@
             this.businessDataGridView.DataSource = this.businessBindingSource1;
             this.businessDataGridView.Location = new System.Drawing.Point(16, 152);
             this.businessDataGridView.Name = "businessDataGridView";
+            this.businessDataGridView.ReadOnly = true;
             this.businessDataGridView.RowTemplate.Height = 24;
+            this.businessDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.businessDataGridView.Size = new System.Drawing.Size(687, 390);
             this.businessDataGridView.TabIndex = 14;
             // 
@@ -322,6 +319,26 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "closeHour";
             this.dataGridViewTextBoxColumn5.HeaderText = "closeHour";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // logOutBut
+            // 
+            this.logOutBut.Location = new System.Drawing.Point(13, 13);
+            this.logOutBut.Name = "logOutBut";
+            this.logOutBut.Size = new System.Drawing.Size(75, 32);
+            this.logOutBut.TabIndex = 0;
+            this.logOutBut.Text = "Log Out";
+            this.logOutBut.UseVisualStyleBackColor = true;
+            this.logOutBut.Click += new System.EventHandler(this.logOutBut_Click);
+            // 
+            // accountBut
+            // 
+            this.accountBut.Location = new System.Drawing.Point(628, 13);
+            this.accountBut.Name = "accountBut";
+            this.accountBut.Size = new System.Drawing.Size(75, 32);
+            this.accountBut.TabIndex = 1;
+            this.accountBut.Text = "Account";
+            this.accountBut.UseVisualStyleBackColor = true;
+            this.accountBut.Click += new System.EventHandler(this.accountBut_Click);
             // 
             // Search
             // 
@@ -371,7 +388,6 @@
         private System.Windows.Forms.TextBox ClosetextBox;
         private System.Windows.Forms.Button Queuebut;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private Quicker_QueueDataSet quicker_QueueDataSet;
         private System.Windows.Forms.BindingSource businessBindingSource;
         private Quicker_QueueDataSetTableAdapters.BusinessTableAdapter businessTableAdapter;
@@ -389,5 +405,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Button logOutBut;
+        private System.Windows.Forms.Button accountBut;
     }
 }

@@ -34,7 +34,7 @@ namespace mock_up
                 {
                     Customer create = new Customer(username, pass, email);
                     MessageBox.Show("Your account has been created!");
-                    Search start = new Search(username);
+                    Search start = new Search(create);
                     start.Show();
                     this.Close();
                 }

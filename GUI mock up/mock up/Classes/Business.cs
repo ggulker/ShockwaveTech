@@ -31,7 +31,8 @@ namespace mock_up
                 throw new System.InvalidOperationException("An account already exists with this username");
             else
             {
-                //p = aes.Encrypt(p, OldPassword);
+                p = aes.Encrypt(p, OldPassword);
+                ep = aes.Encrypt(ep, OldPassword);
                 //u = aes.Encrypt(u, OldPassword);
                 //e = aes.Encrypt(e, OldPassword);
                 //MessageBox.Show(aes.Encrypt(p,p));
@@ -53,6 +54,13 @@ namespace mock_up
             }
         }
 
+        public string EmailPass
+        {
+            get
+            {
+                return emailPass;
+            }
+        }
         //creates user specific queary for our search
         protected override string GetQueary()
         {
