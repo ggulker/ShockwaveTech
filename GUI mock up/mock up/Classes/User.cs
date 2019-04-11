@@ -26,7 +26,7 @@ namespace mock_up
         {
             //gets all info on passed in username
             //ALL CONSTRUCTORS START HERE
-            //OldPassword = p;
+            OldPassword = p;
             //u = aes.Encrypt(u, OldPassword);
             Download(u);
         }

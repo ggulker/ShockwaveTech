@@ -38,3 +38,5 @@ C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.ex
 C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock up.pdb
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Forms.CustumerPageForm.resources
 C:\Users\ceage\Downloads\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Forms.BusinessPageForm.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Forms.BusinessPageForm.resources
+C:\Users\Holden\Documents\ShockwaveTech\GUI mock up\mock up\obj\Debug\mock_up.Forms.CustumerPageForm.resources

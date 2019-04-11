@@ -21,16 +21,20 @@ namespace mock_up
     public partial class BusHome : Form
     {
         //need the business name to get orders
+        NotificationController notification = new NotificationController();
         string username;
         string email;
+        string emailPassword;
         Business user;
         DBController dB = new DBController();
 
         public BusHome(Business n)
         {
+            
             username = n.Username;
             email = n.Email;
             user = n;
+            emailPassword = n.EmailPass;
             InitializeComponent();
         }
 
@@ -81,6 +85,7 @@ namespace mock_up
             //grabs name from selected row then calls the controller to grab the email
             string custEmail = dB.CustEmail
                 (ordersDataGridView.SelectedRows[0].Cells["Customer"].Value.ToString());
+            notification.Notifiy(email, custEmail, emailPassword);
         }
 
         private void removeBut_Click(object sender, EventArgs e)

@@ -13,22 +13,13 @@ using System.Net.Mail;
 
 namespace mock_up.Classes
 {
-    class Notification
+    class NotificationController
     {
-        Notification()
+        public void Notifiy(string be, string ce, string bp)
         {
-            //strings need data from the database
-            //assuming business email and password come from business class
-            //and CustomerEmail comes from clicking on a customer on the queue
-
-            string BusinessEmail = "";
-            string CustomerEmail = "";
-
-
-            //probably need to make readonly or more secure
-            //need to store business email password in database
-            //then decrypt it to use for email notification.
-            string BusinessPassword = "";
+            string BusinessEmail = be;
+            string CustomerEmail = ce;
+            string BusinessPassword = bp;
 
             //Port only works for gmail at the maybe a selection for different email providers
             // or store email provider in business database

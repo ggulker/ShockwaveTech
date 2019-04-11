@@ -26,16 +26,7 @@ namespace mock_up
                 throw new System.InvalidOperationException("An account already exists with this username");
             else
             {
-                //p = aes.Encrypt(p, OldPassword);
-                //u = aes.Encrypt(u, OldPassword);
-                //e = aes.Encrypt(e, OldPassword);
-                //MessageBox.Show(aes.Encrypt(p,p));
-                //MessageBox.Show(aes.Encrypt(u,p));
-                //MessageBox.Show(aes.Encrypt(e,p));
-
-                //MessageBox.Show(aes.Decrypt(p));
-                //MessageBox.Show(aes.Decrypt(u));
-                //MessageBox.Show(aes.Decrypt(e));
+                p = aes.Encrypt(p, OldPassword);
                 pass = p;
                 username = u;
                 email = e;
@@ -55,11 +46,8 @@ namespace mock_up
             pass = userData["pass"].ToString();
             email = userData["email"].ToString();
             username = username.Replace(" ", "");
-            //username = aes.Decrypt(username);
             pass = pass.Replace(" ", "");
-           //pass = aes.Decrypt(pass);
             email = email.Replace(" ", "");
-            //email = aes.Decrypt(email);
         }
 
         protected override void Create()

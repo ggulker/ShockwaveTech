@@ -62,7 +62,7 @@ namespace mock_up
             {
                 business = new Business(user,passText.Text);
                 //checking password
-                if (business.PassCheck(passText.Text))
+                if (business.PassCheck(aes.Encrypt(passText.Text, passText.Text)))
                 {
                     return true;
                 }
@@ -72,7 +72,7 @@ namespace mock_up
             else
             {
                 customer = new Customer(user,passText.Text);
-                if (customer.PassCheck(passText.Text))
+                if (customer.PassCheck(aes.Encrypt(passText.Text, passText.Text)))
                 {
                     return true;
                 }

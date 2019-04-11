@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Aes_Encryption.cs" />
+    <Compile Include="Classes\EncryptionController.cs" />
     <Compile Include="Classes\Business.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\DBController.cs" />
-    <Compile Include="Classes\Notification.cs" />
+    <Compile Include="Classes\NotificationController.cs" />
     <Compile Include="Forms\BusHome.cs">
       <SubType>Form</SubType>
     </Compile>

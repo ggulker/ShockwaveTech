@@ -33,15 +33,6 @@ namespace mock_up
             {
                 p = aes.Encrypt(p, OldPassword);
                 ep = aes.Encrypt(ep, OldPassword);
-                //u = aes.Encrypt(u, OldPassword);
-                //e = aes.Encrypt(e, OldPassword);
-                //MessageBox.Show(aes.Encrypt(p,p));
-                //MessageBox.Show(aes.Encrypt(u,p));
-                //MessageBox.Show(aes.Encrypt(e,p));
-
-                //MessageBox.Show(aes.Decrypt(p));
-                //MessageBox.Show(aes.Decrypt(u));
-                //MessageBox.Show(aes.Decrypt(e));s
                 pass = p;
                 username = u;
                 email = e;
@@ -87,6 +78,14 @@ namespace mock_up
             }
         }
 
+
+        public string EmailPass
+        {
+            get
+            {
+                return emailPass;
+            }
+        }
         //creates user specific queary for our search
         protected override string GetQueary()
         {
@@ -107,6 +106,7 @@ namespace mock_up
             closeHour = Convert.ToInt16(userData["closeHour"].ToString());
             emailPass = userData["emailPass"].ToString();
             //DECRYPT ALL THINGS HERE
+            emailPass = aes.Decrypt(EmailPass, OldPassword);
             //all strings returned have alot of empty spaces removing those
             username = username.Replace(" ", "");
             pass = pass.Replace(" ", "");
