@@ -80,6 +80,12 @@
     <Compile Include="Forms\CustumerPageForm.Designer.cs">
       <DependentUpon>CustumerPageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DoctorOfficeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DoctorOfficeForm.Designer.cs">
+      <DependentUpon>DoctorOfficeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewChoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     <EmbeddedResource Include="Forms\CustumerPageForm.resx">
       <DependentUpon>CustumerPageForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoctorOfficeForm.resx">
+      <DependentUpon>DoctorOfficeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewChoice.resx">
       <DependentUpon>NewChoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Finalize.resx">
       <DependentUpon>Finalize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RestuarantForm.resx">
+      <DependentUpon>RestuarantForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Search.resx">
       <DependentUpon>Search.cs</DependentUpon>

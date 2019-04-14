@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mock_up.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,8 @@ namespace mock_up
         //then creates a new BusHome form with this business
         private void Registerbutton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(UserIDtextBox.Text) || string.IsNullOrEmpty(PasswordtextBox.Text) || string.IsNullOrEmpty(EmailtextBox.Text))
+            if (string.IsNullOrEmpty(UserIDtextBox.Text) || string.IsNullOrEmpty(PasswordtextBox.Text) || string.IsNullOrEmpty(EmailtextBox.Text)
+                || string.IsNullOrEmpty(typeComboBox.Text) || string.IsNullOrEmpty(OpentextBox.Text) || string.IsNullOrEmpty(ClosetextBox.Text) || string.IsNullOrEmpty(NametextBox.Text))
                 MessageBox.Show("Please fill all boxes before registering.");
             else
             {
@@ -39,8 +41,17 @@ namespace mock_up
                 {
                     Business create = new Business(username,pass,email,open,close,type,name,emailPass);
                     MessageBox.Show("Your account has been created!");
-                    BusHome start = new BusHome(create);
-                    start.Show();
+
+                    if (create.Type == "Restraunt")
+                    {
+                        RestuarantForm r = new RestuarantForm(create);
+                        r.Show();
+                    }
+                    else
+                    {
+                        DoctorOfficeForm d = new DoctorOfficeForm(create);
+                        d.Show();
+                    }
                     this.Close();
                 }
                 catch(System.InvalidOperationException)
