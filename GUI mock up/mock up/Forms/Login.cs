@@ -37,8 +37,16 @@ namespace mock_up
                 //wether its a business or customer
                 if (type == 'B')
                 {
-                    BusHome bus = new BusHome(business);
-                    bus.Show();
+                    if(business.Type == "Restraunt")
+                    {
+                        RestuarantForm r = new RestuarantForm(business);
+                        r.Show();
+                    }
+                    else
+                    {
+                        DoctorOfficeForm d = new DoctorOfficeForm(business);
+                        d.Show();
+                    }
                     this.Close();
                 }
                 else
