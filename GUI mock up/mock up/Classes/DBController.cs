@@ -87,14 +87,15 @@ namespace mock_up.Classes
         }
 
         //inserts into orders table
-        public void CreateOrder(string customer, string business)
+        public void CreateOrder(string customer, string business, string name, int time)
         {
             //creates query
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "INSERT INTO Orders VALUES(@customer, @business)";
+            cmd.CommandText = "INSERT INTO Orders VALUES(@customer, @business, @name, @time)";
             cmd.Parameters.AddWithValue("@customer", customer);
             cmd.Parameters.AddWithValue("@business", business);
-
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@time", time);
             //execute query
             con.Open();
             cmd.ExecuteNonQuery();

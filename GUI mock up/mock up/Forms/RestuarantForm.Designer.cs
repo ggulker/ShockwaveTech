@@ -52,13 +52,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Bar4checkBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.logOutBut = new System.Windows.Forms.Button();
             this.userbaseDataSet = new mock_up.UserbaseDataSet();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersTableAdapter = new mock_up.UserbaseDataSetTableAdapters.OrdersTableAdapter();
             this.tableAdapterManager = new mock_up.UserbaseDataSetTableAdapters.TableAdapterManager();
             this.ordersDataGridView = new System.Windows.Forms.DataGridView();
-            this.logOutBut = new System.Windows.Forms.Button();
             this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userbaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
@@ -84,7 +86,7 @@
             this.BiggerTable3checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.BiggerTable3checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BiggerTable3checkBox.Location = new System.Drawing.Point(647, 383);
-            this.BiggerTable3checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BiggerTable3checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.BiggerTable3checkBox.Name = "BiggerTable3checkBox";
             this.BiggerTable3checkBox.Size = new System.Drawing.Size(161, 29);
             this.BiggerTable3checkBox.TabIndex = 92;
@@ -97,7 +99,7 @@
             this.BiggerTable2checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.BiggerTable2checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BiggerTable2checkBox.Location = new System.Drawing.Point(647, 330);
-            this.BiggerTable2checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BiggerTable2checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.BiggerTable2checkBox.Name = "BiggerTable2checkBox";
             this.BiggerTable2checkBox.Size = new System.Drawing.Size(161, 29);
             this.BiggerTable2checkBox.TabIndex = 91;
@@ -110,7 +112,7 @@
             this.BiggerTable1checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.BiggerTable1checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BiggerTable1checkBox.Location = new System.Drawing.Point(647, 272);
-            this.BiggerTable1checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BiggerTable1checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.BiggerTable1checkBox.Name = "BiggerTable1checkBox";
             this.BiggerTable1checkBox.Size = new System.Drawing.Size(161, 29);
             this.BiggerTable1checkBox.TabIndex = 90;
@@ -122,7 +124,7 @@
             this.button1.BackColor = System.Drawing.Color.DarkOrange;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(309, 453);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 89;
@@ -135,7 +137,7 @@
             this.Booth4checkBox.BackColor = System.Drawing.Color.PaleVioletRed;
             this.Booth4checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Booth4checkBox.Location = new System.Drawing.Point(887, 405);
-            this.Booth4checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Booth4checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Booth4checkBox.Name = "Booth4checkBox";
             this.Booth4checkBox.Size = new System.Drawing.Size(101, 29);
             this.Booth4checkBox.TabIndex = 88;
@@ -148,7 +150,7 @@
             this.Booth3checkBox.BackColor = System.Drawing.Color.PaleVioletRed;
             this.Booth3checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Booth3checkBox.Location = new System.Drawing.Point(887, 353);
-            this.Booth3checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Booth3checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Booth3checkBox.Name = "Booth3checkBox";
             this.Booth3checkBox.Size = new System.Drawing.Size(101, 29);
             this.Booth3checkBox.TabIndex = 87;
@@ -161,7 +163,7 @@
             this.Booth2checkBox.BackColor = System.Drawing.Color.PaleVioletRed;
             this.Booth2checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Booth2checkBox.Location = new System.Drawing.Point(887, 302);
-            this.Booth2checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Booth2checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Booth2checkBox.Name = "Booth2checkBox";
             this.Booth2checkBox.Size = new System.Drawing.Size(101, 29);
             this.Booth2checkBox.TabIndex = 86;
@@ -174,7 +176,7 @@
             this.Table4checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.Table4checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Table4checkBox.Location = new System.Drawing.Point(477, 405);
-            this.Table4checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Table4checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Table4checkBox.Name = "Table4checkBox";
             this.Table4checkBox.Size = new System.Drawing.Size(100, 29);
             this.Table4checkBox.TabIndex = 85;
@@ -187,7 +189,7 @@
             this.Table3checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.Table3checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Table3checkBox.Location = new System.Drawing.Point(477, 353);
-            this.Table3checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Table3checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Table3checkBox.Name = "Table3checkBox";
             this.Table3checkBox.Size = new System.Drawing.Size(100, 29);
             this.Table3checkBox.TabIndex = 84;
@@ -200,7 +202,7 @@
             this.Table2checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.Table2checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Table2checkBox.Location = new System.Drawing.Point(477, 302);
-            this.Table2checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Table2checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Table2checkBox.Name = "Table2checkBox";
             this.Table2checkBox.Size = new System.Drawing.Size(100, 29);
             this.Table2checkBox.TabIndex = 83;
@@ -213,7 +215,7 @@
             this.Bar5checkBox.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.Bar5checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bar5checkBox.Location = new System.Drawing.Point(911, 196);
-            this.Bar5checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bar5checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Bar5checkBox.Name = "Bar5checkBox";
             this.Bar5checkBox.Size = new System.Drawing.Size(80, 29);
             this.Bar5checkBox.TabIndex = 82;
@@ -226,7 +228,7 @@
             this.Bar3checkBox.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.Bar3checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bar3checkBox.Location = new System.Drawing.Point(693, 196);
-            this.Bar3checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bar3checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Bar3checkBox.Name = "Bar3checkBox";
             this.Bar3checkBox.Size = new System.Drawing.Size(80, 29);
             this.Bar3checkBox.TabIndex = 80;
@@ -239,7 +241,7 @@
             this.Bar2checkBox.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.Bar2checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bar2checkBox.Location = new System.Drawing.Point(585, 196);
-            this.Bar2checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bar2checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Bar2checkBox.Name = "Bar2checkBox";
             this.Bar2checkBox.Size = new System.Drawing.Size(80, 29);
             this.Bar2checkBox.TabIndex = 79;
@@ -252,7 +254,7 @@
             this.Booth1checkBox.BackColor = System.Drawing.Color.PaleVioletRed;
             this.Booth1checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Booth1checkBox.Location = new System.Drawing.Point(887, 250);
-            this.Booth1checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Booth1checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Booth1checkBox.Name = "Booth1checkBox";
             this.Booth1checkBox.Size = new System.Drawing.Size(101, 29);
             this.Booth1checkBox.TabIndex = 78;
@@ -265,7 +267,7 @@
             this.Bar1checkBox.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.Bar1checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bar1checkBox.Location = new System.Drawing.Point(477, 196);
-            this.Bar1checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bar1checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Bar1checkBox.Name = "Bar1checkBox";
             this.Bar1checkBox.Size = new System.Drawing.Size(80, 29);
             this.Bar1checkBox.TabIndex = 77;
@@ -278,7 +280,7 @@
             this.Table1checkBox.BackColor = System.Drawing.Color.CadetBlue;
             this.Table1checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Table1checkBox.Location = new System.Drawing.Point(477, 250);
-            this.Table1checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Table1checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Table1checkBox.Name = "Table1checkBox";
             this.Table1checkBox.Size = new System.Drawing.Size(100, 29);
             this.Table1checkBox.TabIndex = 76;
@@ -290,7 +292,7 @@
             this.Notifybutton.BackColor = System.Drawing.Color.SpringGreen;
             this.Notifybutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Notifybutton.Location = new System.Drawing.Point(187, 453);
-            this.Notifybutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Notifybutton.Margin = new System.Windows.Forms.Padding(4);
             this.Notifybutton.Name = "Notifybutton";
             this.Notifybutton.Size = new System.Drawing.Size(100, 28);
             this.Notifybutton.TabIndex = 74;
@@ -317,7 +319,7 @@
             this.Removebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Removebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Removebutton.Location = new System.Drawing.Point(65, 453);
-            this.Removebutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Removebutton.Margin = new System.Windows.Forms.Padding(4);
             this.Removebutton.Name = "Removebutton";
             this.Removebutton.Size = new System.Drawing.Size(100, 28);
             this.Removebutton.TabIndex = 72;
@@ -342,7 +344,7 @@
             this.Bar4checkBox.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.Bar4checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bar4checkBox.Location = new System.Drawing.Point(803, 196);
-            this.Bar4checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bar4checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.Bar4checkBox.Name = "Bar4checkBox";
             this.Bar4checkBox.Size = new System.Drawing.Size(80, 29);
             this.Bar4checkBox.TabIndex = 81;
@@ -356,10 +358,20 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 74);
             this.panel1.TabIndex = 75;
+            // 
+            // logOutBut
+            // 
+            this.logOutBut.Location = new System.Drawing.Point(911, 16);
+            this.logOutBut.Name = "logOutBut";
+            this.logOutBut.Size = new System.Drawing.Size(131, 39);
+            this.logOutBut.TabIndex = 95;
+            this.logOutBut.Text = "Log Out";
+            this.logOutBut.UseVisualStyleBackColor = true;
+            this.logOutBut.Click += new System.EventHandler(this.logOutBut_Click);
             // 
             // userbaseDataSet
             // 
@@ -391,30 +403,37 @@
             this.ordersDataGridView.AutoGenerateColumns = false;
             this.ordersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Customer});
+            this.Customer,
+            this.custName,
+            this.orderTime});
             this.ordersDataGridView.DataSource = this.ordersBindingSource;
-            this.ordersDataGridView.Location = new System.Drawing.Point(65, 173);
+            this.ordersDataGridView.Location = new System.Drawing.Point(12, 173);
             this.ordersDataGridView.Name = "ordersDataGridView";
             this.ordersDataGridView.ReadOnly = true;
             this.ordersDataGridView.RowTemplate.Height = 24;
-            this.ordersDataGridView.Size = new System.Drawing.Size(344, 273);
+            this.ordersDataGridView.Size = new System.Drawing.Size(458, 273);
             this.ordersDataGridView.TabIndex = 94;
-            // 
-            // logOutBut
-            // 
-            this.logOutBut.Location = new System.Drawing.Point(911, 16);
-            this.logOutBut.Name = "logOutBut";
-            this.logOutBut.Size = new System.Drawing.Size(131, 39);
-            this.logOutBut.TabIndex = 95;
-            this.logOutBut.Text = "Log Out";
-            this.logOutBut.UseVisualStyleBackColor = true;
-            this.logOutBut.Click += new System.EventHandler(this.logOutBut_Click);
             // 
             // Customer
             // 
             this.Customer.DataPropertyName = "Customer";
-            this.Customer.HeaderText = "Customer";
+            this.Customer.HeaderText = "Username";
             this.Customer.Name = "Customer";
+            this.Customer.ReadOnly = true;
+            // 
+            // custName
+            // 
+            this.custName.DataPropertyName = "custName";
+            this.custName.HeaderText = "Name";
+            this.custName.Name = "custName";
+            this.custName.ReadOnly = true;
+            // 
+            // orderTime
+            // 
+            this.orderTime.DataPropertyName = "orderTime";
+            this.orderTime.HeaderText = "Time";
+            this.orderTime.Name = "orderTime";
+            this.orderTime.ReadOnly = true;
             // 
             // RestuarantForm
             // 
@@ -445,7 +464,7 @@
             this.Controls.Add(this.Removebutton);
             this.Controls.Add(this.Bar4checkBox);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RestuarantForm";
             this.Text = "RestuarantForm";
             this.Load += new System.EventHandler(this.RestuarantForm_Load);
@@ -490,5 +509,7 @@
         private System.Windows.Forms.DataGridView ordersDataGridView;
         private System.Windows.Forms.Button logOutBut;
         private System.Windows.Forms.DataGridViewTextBoxColumn Customer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn custName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderTime;
     }
 }
