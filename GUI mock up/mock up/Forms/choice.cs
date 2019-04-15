@@ -33,5 +33,12 @@ namespace mock_up
             login.Show();
             this.Close();
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Start reset = new Start();
+            reset.Show();
+            this.Close();
+        }
     }
 }

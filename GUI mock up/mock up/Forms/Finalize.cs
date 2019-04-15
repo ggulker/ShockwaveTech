@@ -35,9 +35,20 @@ namespace mock_up.Forms
         //calls controller to add to orders table
         private void QueueBut_Click(object sender, EventArgs e)
         {
-            dB.CreateOrder(customer, business);
-            MessageBox.Show("complete");
-            this.Close();
+
+            if (string.IsNullOrEmpty(nameTextBox.Text) || string.IsNullOrEmpty(timeTextBox.Text))
+            {
+                MessageBox.Show("Please fill all text boxes before queueing");
+            }
+            else
+            {
+                string name = nameTextBox.Text;
+                int time = Convert.ToInt32(timeTextBox.Text);
+                dB.CreateOrder(customer, business, name, time);
+                MessageBox.Show("complete");
+                this.Close();
+            }
+
         }
     }
 }
