@@ -352,7 +352,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.businessDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

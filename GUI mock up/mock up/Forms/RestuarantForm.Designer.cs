@@ -473,10 +473,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox QueuelistBox;
         private System.Windows.Forms.Label Seatlabel;
         private System.Windows.Forms.CheckBox BiggerTable3checkBox;
         private System.Windows.Forms.CheckBox BiggerTable2checkBox;
@@ -497,6 +498,7 @@
         private System.Windows.Forms.Label Queuelabel;
         private System.Windows.Forms.Button Removebutton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox Bar4checkBox;
         private System.Windows.Forms.Panel panel1;
         private UserbaseDataSet userbaseDataSet;

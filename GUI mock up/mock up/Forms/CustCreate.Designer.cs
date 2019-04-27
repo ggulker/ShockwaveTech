@@ -32,69 +32,62 @@
             // Emaillabel
             // 
             this.Emaillabel.AutoSize = true;
-            this.Emaillabel.Location = new System.Drawing.Point(350, 395);
-            this.Emaillabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.Emaillabel.Location = new System.Drawing.Point(204, 189);
             this.Emaillabel.Name = "Emaillabel";
-            this.Emaillabel.Size = new System.Drawing.Size(95, 32);
+            this.Emaillabel.Size = new System.Drawing.Size(35, 13);
             this.Emaillabel.TabIndex = 3;
             this.Emaillabel.Text = "Email:";
             // 
             // EmailtextBox
             // 
             this.EmailtextBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.EmailtextBox.Location = new System.Drawing.Point(458, 389);
-            this.EmailtextBox.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.EmailtextBox.Location = new System.Drawing.Point(245, 186);
             this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(434, 38);
+            this.EmailtextBox.Size = new System.Drawing.Size(165, 20);
             this.EmailtextBox.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(302, 457);
-            this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label3.Location = new System.Drawing.Point(186, 215);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 32);
+            this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Password:";
             // 
             // PasswordtextBox
             // 
             this.PasswordtextBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.PasswordtextBox.Location = new System.Drawing.Point(458, 451);
-            this.PasswordtextBox.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.PasswordtextBox.Location = new System.Drawing.Point(245, 212);
             this.PasswordtextBox.Name = "PasswordtextBox";
             this.PasswordtextBox.PasswordChar = '*';
-            this.PasswordtextBox.Size = new System.Drawing.Size(434, 38);
+            this.PasswordtextBox.Size = new System.Drawing.Size(165, 20);
             this.PasswordtextBox.TabIndex = 4;
             this.PasswordtextBox.UseSystemPasswordChar = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(328, 333);
-            this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label4.Location = new System.Drawing.Point(196, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 32);
+            this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "UserID:";
             // 
             // UserIDtextBox
             // 
             this.UserIDtextBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.UserIDtextBox.Location = new System.Drawing.Point(458, 327);
-            this.UserIDtextBox.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.UserIDtextBox.Location = new System.Drawing.Point(245, 160);
             this.UserIDtextBox.Name = "UserIDtextBox";
-            this.UserIDtextBox.Size = new System.Drawing.Size(434, 38);
+            this.UserIDtextBox.Size = new System.Drawing.Size(165, 20);
             this.UserIDtextBox.TabIndex = 6;
             // 
             // Registerbutton
             // 
             this.Registerbutton.BackColor = System.Drawing.Color.SpringGreen;
-            this.Registerbutton.Location = new System.Drawing.Point(698, 513);
-            this.Registerbutton.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Registerbutton.Location = new System.Drawing.Point(335, 238);
             this.Registerbutton.Name = "Registerbutton";
-            this.Registerbutton.Size = new System.Drawing.Size(200, 54);
+            this.Registerbutton.Size = new System.Drawing.Size(75, 23);
             this.Registerbutton.TabIndex = 8;
             this.Registerbutton.Text = "Register";
             this.Registerbutton.UseVisualStyleBackColor = false;
@@ -102,53 +95,49 @@
             // 
             // Cancelbutton
             // 
-            this.Cancelbutton.BackColor = System.Drawing.Color.DimGray;
-            this.Cancelbutton.Location = new System.Drawing.Point(458, 513);
-            this.Cancelbutton.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Cancelbutton.BackColor = System.Drawing.Color.Silver;
+            this.Cancelbutton.Location = new System.Drawing.Point(245, 238);
             this.Cancelbutton.Name = "Cancelbutton";
-            this.Cancelbutton.Size = new System.Drawing.Size(200, 54);
+            this.Cancelbutton.Size = new System.Drawing.Size(75, 23);
             this.Cancelbutton.TabIndex = 9;
             this.Cancelbutton.Text = "Cancel";
             this.Cancelbutton.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Red;
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1320, 143);
+            this.panel1.Size = new System.Drawing.Size(597, 60);
             this.panel1.TabIndex = 10;
             // 
             // panel2
             // 
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(32, 29);
-            this.panel2.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(192, 89);
+            this.panel2.Size = new System.Drawing.Size(72, 37);
             this.panel2.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(170, 188);
-            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(137, 119);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(311, 46);
+            this.label1.Size = new System.Drawing.Size(134, 20);
             this.label1.TabIndex = 11;
             this.label1.Text = "Create Account";
             // 
             // CustCreate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1320, 880);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(597, 367);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Cancelbutton);
@@ -159,7 +148,6 @@
             this.Controls.Add(this.PasswordtextBox);
             this.Controls.Add(this.Emaillabel);
             this.Controls.Add(this.EmailtextBox);
-            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.Name = "CustCreate";
             this.Text = "Register";
             this.panel1.ResumeLayout(false);
