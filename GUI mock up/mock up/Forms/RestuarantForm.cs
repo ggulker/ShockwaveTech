@@ -74,5 +74,11 @@ namespace mock_up.Forms
             restart.Show();
             this.Close();
         }
+
+        private void accountBut_Click(object sender, EventArgs e)
+        {
+            BusinessPageForm change = new BusinessPageForm(user);
+            change.Show();
+        }
     }
 }

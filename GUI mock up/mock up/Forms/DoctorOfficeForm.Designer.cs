@@ -38,9 +38,7 @@
             this.Room5checkBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.Doctor4checkBox = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.Room4checkBox = new System.Windows.Forms.CheckBox();
             this.Room3checkBox = new System.Windows.Forms.CheckBox();
             this.Room2checkBox = new System.Windows.Forms.CheckBox();
@@ -49,13 +47,15 @@
             this.Queuelabel = new System.Windows.Forms.Label();
             this.Removebutton = new System.Windows.Forms.Button();
             this.ordersDataGridView = new System.Windows.Forms.DataGridView();
+            this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userbaseDataSet = new mock_up.UserbaseDataSet();
             this.ordersTableAdapter = new mock_up.UserbaseDataSetTableAdapters.OrdersTableAdapter();
             this.tableAdapterManager = new mock_up.UserbaseDataSetTableAdapters.TableAdapterManager();
-            this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.custName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logOutBut = new System.Windows.Forms.Button();
+            this.accountBut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
@@ -159,8 +159,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel1.Controls.Add(this.accountBut);
+            this.panel1.Controls.Add(this.logOutBut);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -179,15 +180,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Doctor\'s Office";
             // 
-            // panel2
-            // 
-            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(16, 15);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(96, 46);
-            this.panel2.TabIndex = 1;
-            // 
             // Doctor4checkBox
             // 
             this.Doctor4checkBox.AutoSize = true;
@@ -201,18 +193,6 @@
             this.Doctor4checkBox.TabIndex = 96;
             this.Doctor4checkBox.Text = "Doctor 4";
             this.Doctor4checkBox.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkOrange;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(312, 446);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 88;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // Room4checkBox
             // 
@@ -270,7 +250,7 @@
             // 
             this.Notifybutton.BackColor = System.Drawing.Color.SpringGreen;
             this.Notifybutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Notifybutton.Location = new System.Drawing.Point(193, 446);
+            this.Notifybutton.Location = new System.Drawing.Point(402, 446);
             this.Notifybutton.Margin = new System.Windows.Forms.Padding(4);
             this.Notifybutton.Name = "Notifybutton";
             this.Notifybutton.Size = new System.Drawing.Size(100, 28);
@@ -297,7 +277,7 @@
             this.Removebutton.BackColor = System.Drawing.Color.IndianRed;
             this.Removebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Removebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Removebutton.Location = new System.Drawing.Point(68, 446);
+            this.Removebutton.Location = new System.Drawing.Point(12, 446);
             this.Removebutton.Margin = new System.Windows.Forms.Padding(4);
             this.Removebutton.Name = "Removebutton";
             this.Removebutton.Size = new System.Drawing.Size(100, 28);
@@ -324,6 +304,27 @@
             this.ordersDataGridView.Size = new System.Drawing.Size(490, 273);
             this.ordersDataGridView.TabIndex = 98;
             // 
+            // Customer
+            // 
+            this.Customer.DataPropertyName = "Customer";
+            this.Customer.HeaderText = "Username";
+            this.Customer.Name = "Customer";
+            this.Customer.ReadOnly = true;
+            // 
+            // custName
+            // 
+            this.custName.DataPropertyName = "custName";
+            this.custName.HeaderText = "Name";
+            this.custName.Name = "custName";
+            this.custName.ReadOnly = true;
+            // 
+            // orderTime
+            // 
+            this.orderTime.DataPropertyName = "orderTime";
+            this.orderTime.HeaderText = "Time";
+            this.orderTime.Name = "orderTime";
+            this.orderTime.ReadOnly = true;
+            // 
             // ordersBindingSource
             // 
             this.ordersBindingSource.DataMember = "Orders";
@@ -347,26 +348,25 @@
             this.tableAdapterManager.OrdersTableAdapter = this.ordersTableAdapter;
             this.tableAdapterManager.UpdateOrder = mock_up.UserbaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // Customer
+            // logOutBut
             // 
-            this.Customer.DataPropertyName = "Customer";
-            this.Customer.HeaderText = "Username";
-            this.Customer.Name = "Customer";
-            this.Customer.ReadOnly = true;
+            this.logOutBut.Location = new System.Drawing.Point(12, 16);
+            this.logOutBut.Name = "logOutBut";
+            this.logOutBut.Size = new System.Drawing.Size(131, 39);
+            this.logOutBut.TabIndex = 96;
+            this.logOutBut.Text = "Log Out";
+            this.logOutBut.UseVisualStyleBackColor = true;
+            this.logOutBut.Click += new System.EventHandler(this.logOutBut_Click);
             // 
-            // custName
+            // accountBut
             // 
-            this.custName.DataPropertyName = "custName";
-            this.custName.HeaderText = "Name";
-            this.custName.Name = "custName";
-            this.custName.ReadOnly = true;
-            // 
-            // orderTime
-            // 
-            this.orderTime.DataPropertyName = "orderTime";
-            this.orderTime.HeaderText = "Time";
-            this.orderTime.Name = "orderTime";
-            this.orderTime.ReadOnly = true;
+            this.accountBut.Location = new System.Drawing.Point(923, 16);
+            this.accountBut.Name = "accountBut";
+            this.accountBut.Size = new System.Drawing.Size(132, 39);
+            this.accountBut.TabIndex = 97;
+            this.accountBut.Text = "Account";
+            this.accountBut.UseVisualStyleBackColor = true;
+            this.accountBut.Click += new System.EventHandler(this.accountBut_Click);
             // 
             // DoctorOfficeForm
             // 
@@ -384,7 +384,6 @@
             this.Controls.Add(this.Room5checkBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Doctor4checkBox);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Room4checkBox);
             this.Controls.Add(this.Room3checkBox);
             this.Controls.Add(this.Room2checkBox);
@@ -417,9 +416,7 @@
         private System.Windows.Forms.CheckBox Room5checkBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox Doctor4checkBox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox Room4checkBox;
         private System.Windows.Forms.CheckBox Room3checkBox;
         private System.Windows.Forms.CheckBox Room2checkBox;
@@ -435,5 +432,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Customer;
         private System.Windows.Forms.DataGridViewTextBoxColumn custName;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderTime;
+        private System.Windows.Forms.Button logOutBut;
+        private System.Windows.Forms.Button accountBut;
     }
 }

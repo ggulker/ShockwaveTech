@@ -67,5 +67,18 @@ namespace mock_up.Forms
                 (ordersDataGridView.SelectedRows[0].Cells["Customer"].Value.ToString());
             notification.Notifiy(email, custEmail, emailPassword);
         }
+
+        private void logOutBut_Click(object sender, EventArgs e)
+        {
+            Start restart = new Start();
+            restart.Show();
+            this.Close();
+        }
+
+        private void accountBut_Click(object sender, EventArgs e)
+        {
+            BusinessPageForm change = new BusinessPageForm(user);
+            change.Show();
+        }
     }
 }

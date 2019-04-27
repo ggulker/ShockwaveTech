@@ -33,7 +33,6 @@
             this.BiggerTable3checkBox = new System.Windows.Forms.CheckBox();
             this.BiggerTable2checkBox = new System.Windows.Forms.CheckBox();
             this.BiggerTable1checkBox = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.Booth4checkBox = new System.Windows.Forms.CheckBox();
             this.Booth3checkBox = new System.Windows.Forms.CheckBox();
             this.Booth2checkBox = new System.Windows.Forms.CheckBox();
@@ -52,7 +51,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Bar4checkBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.logOutBut = new System.Windows.Forms.Button();
             this.userbaseDataSet = new mock_up.UserbaseDataSet();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersTableAdapter = new mock_up.UserbaseDataSetTableAdapters.OrdersTableAdapter();
@@ -61,6 +59,8 @@
             this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logOutBut = new System.Windows.Forms.Button();
+            this.accountBut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userbaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
@@ -118,18 +118,6 @@
             this.BiggerTable1checkBox.TabIndex = 90;
             this.BiggerTable1checkBox.Text = "Bigger Table 1";
             this.BiggerTable1checkBox.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkOrange;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(309, 453);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 89;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // Booth4checkBox
             // 
@@ -291,7 +279,7 @@
             // 
             this.Notifybutton.BackColor = System.Drawing.Color.SpringGreen;
             this.Notifybutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Notifybutton.Location = new System.Drawing.Point(187, 453);
+            this.Notifybutton.Location = new System.Drawing.Point(370, 453);
             this.Notifybutton.Margin = new System.Windows.Forms.Padding(4);
             this.Notifybutton.Name = "Notifybutton";
             this.Notifybutton.Size = new System.Drawing.Size(100, 28);
@@ -318,7 +306,7 @@
             this.Removebutton.BackColor = System.Drawing.Color.IndianRed;
             this.Removebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Removebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Removebutton.Location = new System.Drawing.Point(65, 453);
+            this.Removebutton.Location = new System.Drawing.Point(13, 453);
             this.Removebutton.Margin = new System.Windows.Forms.Padding(4);
             this.Removebutton.Name = "Removebutton";
             this.Removebutton.Size = new System.Drawing.Size(100, 28);
@@ -354,6 +342,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Red;
+            this.panel1.Controls.Add(this.accountBut);
             this.panel1.Controls.Add(this.logOutBut);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -362,16 +351,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 74);
             this.panel1.TabIndex = 75;
-            // 
-            // logOutBut
-            // 
-            this.logOutBut.Location = new System.Drawing.Point(911, 16);
-            this.logOutBut.Name = "logOutBut";
-            this.logOutBut.Size = new System.Drawing.Size(131, 39);
-            this.logOutBut.TabIndex = 95;
-            this.logOutBut.Text = "Log Out";
-            this.logOutBut.UseVisualStyleBackColor = true;
-            this.logOutBut.Click += new System.EventHandler(this.logOutBut_Click);
             // 
             // userbaseDataSet
             // 
@@ -435,6 +414,26 @@
             this.orderTime.Name = "orderTime";
             this.orderTime.ReadOnly = true;
             // 
+            // logOutBut
+            // 
+            this.logOutBut.Location = new System.Drawing.Point(13, 16);
+            this.logOutBut.Name = "logOutBut";
+            this.logOutBut.Size = new System.Drawing.Size(131, 39);
+            this.logOutBut.TabIndex = 95;
+            this.logOutBut.Text = "Log Out";
+            this.logOutBut.UseVisualStyleBackColor = true;
+            this.logOutBut.Click += new System.EventHandler(this.logOutBut_Click);
+            // 
+            // accountBut
+            // 
+            this.accountBut.Location = new System.Drawing.Point(911, 12);
+            this.accountBut.Name = "accountBut";
+            this.accountBut.Size = new System.Drawing.Size(132, 39);
+            this.accountBut.TabIndex = 96;
+            this.accountBut.Text = "Account";
+            this.accountBut.UseVisualStyleBackColor = true;
+            this.accountBut.Click += new System.EventHandler(this.accountBut_Click);
+            // 
             // RestuarantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,7 +445,6 @@
             this.Controls.Add(this.BiggerTable3checkBox);
             this.Controls.Add(this.BiggerTable2checkBox);
             this.Controls.Add(this.BiggerTable1checkBox);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Booth4checkBox);
             this.Controls.Add(this.Booth3checkBox);
             this.Controls.Add(this.Booth2checkBox);
@@ -483,7 +481,6 @@
         private System.Windows.Forms.CheckBox BiggerTable3checkBox;
         private System.Windows.Forms.CheckBox BiggerTable2checkBox;
         private System.Windows.Forms.CheckBox BiggerTable1checkBox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox Booth4checkBox;
         private System.Windows.Forms.CheckBox Booth3checkBox;
         private System.Windows.Forms.CheckBox Booth2checkBox;
@@ -507,9 +504,10 @@
         private UserbaseDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
         private UserbaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView ordersDataGridView;
-        private System.Windows.Forms.Button logOutBut;
         private System.Windows.Forms.DataGridViewTextBoxColumn Customer;
         private System.Windows.Forms.DataGridViewTextBoxColumn custName;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderTime;
+        private System.Windows.Forms.Button logOutBut;
+        private System.Windows.Forms.Button accountBut;
     }
 }

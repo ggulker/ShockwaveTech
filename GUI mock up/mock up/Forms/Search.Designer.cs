@@ -40,6 +40,8 @@
             this.ClosetextBox = new System.Windows.Forms.TextBox();
             this.Queuebut = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.accountBut = new System.Windows.Forms.Button();
+            this.logOutBut = new System.Windows.Forms.Button();
             this.businessBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userbaseDataSet = new mock_up.UserbaseDataSet();
             this.businessBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -54,8 +56,6 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logOutBut = new System.Windows.Forms.Button();
-            this.accountBut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.businessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userbaseDataSet)).BeginInit();
@@ -69,6 +69,7 @@
             this.FiltercomboBox.Items.AddRange(new object[] {
             "",
             "Restraunt",
+            "Doctor\'s Office",
             "Favorites"});
             this.FiltercomboBox.Location = new System.Drawing.Point(396, 90);
             this.FiltercomboBox.Margin = new System.Windows.Forms.Padding(4);
@@ -192,6 +193,26 @@
             this.panel1.Size = new System.Drawing.Size(727, 74);
             this.panel1.TabIndex = 12;
             // 
+            // accountBut
+            // 
+            this.accountBut.Location = new System.Drawing.Point(628, 13);
+            this.accountBut.Name = "accountBut";
+            this.accountBut.Size = new System.Drawing.Size(75, 32);
+            this.accountBut.TabIndex = 1;
+            this.accountBut.Text = "Account";
+            this.accountBut.UseVisualStyleBackColor = true;
+            this.accountBut.Click += new System.EventHandler(this.accountBut_Click);
+            // 
+            // logOutBut
+            // 
+            this.logOutBut.Location = new System.Drawing.Point(13, 13);
+            this.logOutBut.Name = "logOutBut";
+            this.logOutBut.Size = new System.Drawing.Size(75, 32);
+            this.logOutBut.TabIndex = 0;
+            this.logOutBut.Text = "Log Out";
+            this.logOutBut.UseVisualStyleBackColor = true;
+            this.logOutBut.Click += new System.EventHandler(this.logOutBut_Click);
+            // 
             // userbaseDataSet
             // 
             this.userbaseDataSet.DataSetName = "UserbaseDataSet";
@@ -260,59 +281,45 @@
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "BusName";
-            this.dataGridViewTextBoxColumn7.HeaderText = "BusName";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Name";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // Here
             // 
             this.Here.DataPropertyName = "username";
             this.Here.HeaderText = "username";
             this.Here.Name = "Here";
+            this.Here.ReadOnly = true;
             this.Here.Visible = false;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "BusType";
-            this.dataGridViewTextBoxColumn6.HeaderText = "BusType";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Type";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "email";
-            this.dataGridViewTextBoxColumn3.HeaderText = "email";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Email";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "openHour";
-            this.dataGridViewTextBoxColumn4.HeaderText = "openHour";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Open";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "closeHour";
-            this.dataGridViewTextBoxColumn5.HeaderText = "closeHour";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Close";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // logOutBut
-            // 
-            this.logOutBut.Location = new System.Drawing.Point(13, 13);
-            this.logOutBut.Name = "logOutBut";
-            this.logOutBut.Size = new System.Drawing.Size(75, 32);
-            this.logOutBut.TabIndex = 0;
-            this.logOutBut.Text = "Log Out";
-            this.logOutBut.UseVisualStyleBackColor = true;
-            this.logOutBut.Click += new System.EventHandler(this.logOutBut_Click);
-            // 
-            // accountBut
-            // 
-            this.accountBut.Location = new System.Drawing.Point(628, 13);
-            this.accountBut.Name = "accountBut";
-            this.accountBut.Size = new System.Drawing.Size(75, 32);
-            this.accountBut.TabIndex = 1;
-            this.accountBut.Text = "Account";
-            this.accountBut.UseVisualStyleBackColor = true;
-            this.accountBut.Click += new System.EventHandler(this.accountBut_Click);
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // Search
             // 
@@ -369,13 +376,13 @@
         private System.Windows.Forms.Button favoriteBut;
         private System.Windows.Forms.Button checkBut;
         private System.Windows.Forms.DataGridView businessDataGridView;
+        private System.Windows.Forms.Button logOutBut;
+        private System.Windows.Forms.Button accountBut;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Here;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.Button logOutBut;
-        private System.Windows.Forms.Button accountBut;
     }
 }
